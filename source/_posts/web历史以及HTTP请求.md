@@ -19,17 +19,17 @@ URI分为URL（统一资源定位符）和URN（统一资源名称），我们�
 
 **URL**
 我们可以通过URL确定一个唯一的网址
-![d33ec0cbc385b3dc8de0a5bbdead0d6a.png](en-resource://database/2560:1)
+![Image.png](https://i.loli.net/2019/08/17/uSURxEL32iKYkwA.png)
 
 #### DNS & hosts
 **DNS**
 域名解析，输入域名，输出IP
 
 我们可以用 nslookup baidu.com，来通过路由器查询百度对应的IP
-![a954c0bdc70f9fe854251de9581e6245.png](en-resource://database/2562:1)
+![Image _2_.png](https://i.loli.net/2019/08/17/kQtHAjIg7iDlJpy.png)
 
 或者是ping一下
-![4d4a60d555c06256f8ff526ad89d1148.png](en-resource://database/2564:1)
+![Image _3_.png](https://i.loli.net/2019/08/17/GbPjhi85gsL2VuF.png)
 
 
 ### 服务器（Server）、客户端（Client）、HTTP
@@ -133,9 +133,8 @@ GET 获取数据    /  路径是根目录 协议是HTTP和协议的版本号
 
 这里还要额外提下get与post的区别
 **get与post的区别**
-
-get为获取内容，在输入网址的时候get
-post为上传内容，如登录的时候post
+- get为获取内容，在输入网址的时候get
+- post为上传内容，如登录的时候post
 
 #### 响应的格式
 
@@ -161,4 +160,4 @@ post为上传内容，如登录的时候post
 
 #### 用浏览器查看响应
 在network下查看对应网页的响应
-![9f3ca40cd1a27a091703aa0273367bc6.png](en-resource://database/2886:1)
+![Image _4_.png](https://i.loli.net/2019/08/17/eu7jq5oAp1rWnDL.png)
