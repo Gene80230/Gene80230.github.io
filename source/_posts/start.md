@@ -5,7 +5,7 @@ tags:
 ---
 在[上一节](https://gene80230.github.io/2019/08/18/HTML%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE%E4%BB%8B%E7%BB%8D/)中我们已经介绍了HTML的常用标签。接下来我们就来看下一些用法比较不为人知的标签。
 
-#### iframne 
+### iframne 标签
 *用法示例：*
 1. iframe标签可以在所在页面中的位置再嵌套一个窗口，但必须要有src属性，src属性指明将要嵌入页面的url。以此来达到交互效果。
 2. 当我们我们需要给iframe的提供一个name属性 让a标签的target属性的值与之对应，就可以在iframe中打开指定的网页了。如下：
@@ -14,7 +14,7 @@ tags:
 <a href="http://baidu.com" target="xxx">度娘</a>
 <a href="http://qq.com" target="xxx">QQ</a>
 ```
-#### a
+### a 标签
 我们都知道a标签是可以在网页中实现跳转的，但这只是它其中的一个功能而已，它还有另外一个功能，我们现在指定一个a标签让它跳转到index2页面，它肯定会按照我们说的跳转到index2页面。
 ```html
 <a href="./index2.html">点我</a>
@@ -49,7 +49,7 @@ tags:
 1. href="javascript: alert(1);"  会弹出对话框
 2. href="javascript: ;"    //点击之后什么都不做
 
-#### form 标签
+### form 标签
 form 标签也是可以跳转页面的，会HTTP POST请求，不过要注意file协议不支持。
 下面我们来看看它的属性
 **action属性**
@@ -96,7 +96,7 @@ form 标签也是可以跳转页面的，会HTTP POST请求，不过要注意fil
 <button>button</button>
 ```
 
-#### input 标签
+### input 标签
 接下来我们来看下不同的type类型
 **button**
 就是一个按钮
@@ -158,7 +158,7 @@ form 标签也是可以跳转页面的，会HTTP POST请求，不过要注意fil
 我们可以通过css的宽高来给它加样式，cols、rows不是很准确。
 我们还可以让它的resize:none;这样它就不可以被拉动了
 
-**table 标签**    
+### table 标签 
 常用表格写法:
 加了border之后，边框会重合，我们可以用css属性border-collapse: collapse;来清除它
 ![Markdown](http://i1.fuimg.com/644982/491680d10bca07bd.png)
