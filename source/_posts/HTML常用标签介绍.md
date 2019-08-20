@@ -46,7 +46,7 @@ tags:
 
 [更多转义字符](http://tool.oschina.net/commons?type=2)
 
-#### 文本样式相关标签
+#### 文本样式标签
 `<b></b>` 加粗标签，样式标签，bold的缩写，内联元素。
 `<strong></strong>` 语气强调标签，虽然效果与`b`标签相同，但更加表示强调，而不是`b`标签的加粗。
 `<strong></strong>` 语义上的强调，内联元素。
