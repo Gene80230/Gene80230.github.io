@@ -98,9 +98,9 @@ form 标签也是可以跳转页面的，会HTTP POST请求，不过要注意fil
 
 ### input 标签
 接下来我们来看下不同的type类型
-**button**
-就是一个按钮
-**checkbox** 多选框
+**button**  就是一个按钮
+
+**checkbox**  多选框
 这是一个选框，语法如下：
 ```html
 <input type="checkbox" id="love"><label for="love"> 爱我</label>
@@ -120,8 +120,7 @@ form 标签也是可以跳转页面的，会HTTP POST请求，不过要注意fil
 ![Markdown](http://i1.fuimg.com/644982/4fb2603e1e3cc040.png)
 ![Markdown](http://i1.fuimg.com/644982/2b01eeccdc3e09f6.png)
 
-**radio**  
-单选框
+**radio**  单选框
 ```html
 <label><input type="radio" value="yes">yes</label>
 <label><input type="radio" value="no">no</label>
