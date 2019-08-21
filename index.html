@@ -229,6 +229,152 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/21/开始学习CSS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Gene">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Gene’s Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/21/开始学习CSS/" itemprop="url">开始学习CSS</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-21T18:50:37+08:00">
+                2019-08-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="开始学习CSS（Cascading-Style-Sheets）"><a href="#开始学习CSS（Cascading-Style-Sheets）" class="headerlink" title="开始学习CSS（Cascading Style Sheets）"></a>开始学习CSS（Cascading Style Sheets）</h3><h3 id="引入css的方式"><a href="#引入css的方式" class="headerlink" title="引入css的方式"></a>引入css的方式</h3><ul>
+<li><p>内联样式：放在标签内写style属性</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">style</span>=<span class="string">"text-align:center;"</span>&gt;</span>Gene<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>style标签引入：把style标签放在head标签中</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">    h1&#123;text-align:center;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>外部样式： 用link来连接，css属性写入css文件中</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"./style.css"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="浮动float"><a href="#浮动float" class="headerlink" title="浮动float"></a>浮动float</h3><p>用了float之后会有bug，我们只需要记住，给你浮动元素的父元素加上一个类clearfix，这个类的css属性如下：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">::after</span>&#123;</span><br><span class="line">    <span class="attribute">content</span>:<span class="string">''</span>;</span><br><span class="line">    <span class="attribute">display</span>:block;</span><br><span class="line">    <span class="attribute">clear</span>:both;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这样，就能让列表变成横向，从而不产生bug</p>
+<h4 id="ul消除样式"><a href="#ul消除样式" class="headerlink" title="ul消除样式"></a>ul消除样式</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">ul</span>&#123;<span class="attribute">list-style</span>: none;&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="a消除样式"><a href="#a消除样式" class="headerlink" title="a消除样式"></a>a消除样式</h4><p>a标签默认取值为underline（下划线），我们可以让它的值为none，取消下划线</p>
+<p>overline（上划线）<br>line-through（中划线）</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span>&#123;<span class="attribute">text-decoration</span>:none;&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="如何解决hover之后元素会多出像素"><a href="#如何解决hover之后元素会多出像素" class="headerlink" title="如何解决hover之后元素会多出像素"></a>如何解决hover之后元素会多出像素</h4><p>我们可以在hover之前就让它存在，并且它是透明的，比如a元素的边框:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.topNavBar</span>&gt;<span class="selector-tag">nav</span>&gt;<span class="selector-tag">ul</span> <span class="selector-tag">li</span> <span class="selector-tag">a</span>&#123;</span><br><span class="line">    border:1px solid transparent;  //透明色</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h3><h4 id="css布局：横向-＆-纵向"><a href="#css布局：横向-＆-纵向" class="headerlink" title="css布局：横向 ＆ 纵向"></a>css布局：横向 ＆ 纵向</h4><p>如有3个div，两个在上，一个在下，前面两个为横向布局看作一个整体之后，与第三个div成纵向布局。</p>
+<h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><p>页面上默认字体大小是16px</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/20/start/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -300,19 +446,26 @@
       
         
           
-            <p>在<a href="https://gene80230.github.io/2019/08/18/HTML%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE%E4%BB%8B%E7%BB%8D/" target="_blank" rel="noopener">上一节</a>中我们已经介绍了HTML的常用标签。接下来我们就来看下一些用法比较不为人知的标签。</p>
-<h3 id="iframne-标签"><a href="#iframne-标签" class="headerlink" title="iframne 标签"></a>iframne 标签</h3><p><em>用法示例：</em></p>
-<ol>
+            <p>在<a href="https://gene80230.github.io/2019/08/18/HTML%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE%E4%BB%8B%E7%BB%8D/" target="_blank" rel="noopener">上一节</a>中我们已经介绍了HTML的常用标签。接下来我们就来看下一些标签的用法。</p>
+<h3 id="img-标签"><a href="#img-标签" class="headerlink" title="img 标签"></a>img 标签</h3><p>在页面中显示图片，接下来我们来看看它的属性<br><strong>src 属性</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"图片的路径"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>实际上不是将一张图片嵌入到网页中，而是通知服务器发起一个get请求，请求服务器找到图片并且加载。</p>
+<p><strong>height 属性 ＆ width 属性</strong><br><code>height</code>属性是高度，<code>width</code>是宽度，单位是像素和百分比。</p>
+<p><strong>alt 属性</strong><br>alt属性在图片无法加载裂开时占住图片位置的文字。</p>
+<p><strong>title</strong><br>title属性会在鼠标悬停时提示文字。</p>
+<h3 id="iframne-标签"><a href="#iframne-标签" class="headerlink" title="iframne 标签"></a>iframne 标签</h3><ol>
 <li>iframe标签可以在所在页面中的位置再嵌套一个窗口，但必须要有src属性，src属性指明将要嵌入页面的url。以此来达到交互效果。</li>
-<li>当我们我们需要给iframe的提供一个name属性 让a标签的target属性的值与之对应，就可以在iframe中打开指定的网页了。如下：<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;iframe src=<span class="string">"#"</span> name=<span class="string">"xxx"</span> frameborder=<span class="string">"0"</span>&gt;&lt;/iframe&gt;</span><br><span class="line">&lt;a href=<span class="string">"http://baidu.com"</span> target=<span class="string">"xxx"</span>&gt;度娘&lt;<span class="regexp">/a&gt;</span></span><br><span class="line"><span class="regexp">&lt;a href="http:/</span><span class="regexp">/qq.com" target="xxx"&gt;QQ&lt;/</span>a&gt;</span><br></pre></td></tr></table></figure>
+<li>当我们我们需要给iframe的提供一个name属性 让a标签的target属性的值与之对应，就可以在iframe中打开指定的网页了。如下：<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;iframe src=<span class="string">"#"</span> name=<span class="string">"xxx"</span> frameborder=<span class="string">"0"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span></span><br><span class="line">&lt;a href=<span class="string">"http://baidu.com"</span> target=<span class="string">"xxx"</span>&gt;度娘&lt;<span class="regexp">/a&gt;</span></span><br><span class="line"><span class="regexp">&lt;a href="http:/</span><span class="regexp">/qq.com" target="xxx"&gt;QQ&lt;/</span>a&gt;</span><br></pre></td></tr></table></figure>
 
 </li>
 </ol>
 <h3 id="a-标签"><a href="#a-标签" class="headerlink" title="a 标签"></a>a 标签</h3><p>我们都知道a标签是可以在网页中实现跳转的，但这只是它其中的一个功能而已，它还有另外一个功能，我们现在指定一个a标签让它跳转到index2页面，它肯定会按照我们说的跳转到index2页面。</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"./index2.html"</span>&gt;</span>点我<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>我们来看下请求头，然后发现，它居然发起了一个get请求。<br><img src="https://i.loli.net/2019/08/20/iynWxaFSeV9jRuf.png" alt="a.png"><br>所以我们现在要知道的是，它不止会跳转，跳转的时候还会发起请求。接下来我们来看看它的属性<br><strong>target属性</strong> 主要有四个值，如下：<br><code>_blank</code>  在空页面打开<br><code>_self</code>   在当前页面（自身）中打开<br><code>_parent</code>     在上一级页面中打开<br><code>_top</code>    在最顶级（祖先）页面中打开</p>
-<p><strong>download属性</strong> </p>
+<p>我们来看下请求头，然后发现，它居然发起了一个get请求。<br><img src="https://i.loli.net/2019/08/20/iynWxaFSeV9jRuf.png" alt="a.png"><br>所以我们现在要知道的是，它不止会跳转，跳转的时候还会发起请求。接下来我们来看看它的属性</p>
+<p><strong>target 属性</strong><br>主要有四个值，如下：<br><code>_blank</code>  在空页面打开<br><code>_self</code>   在当前页面（自身）中打开<br><code>_parent</code>     在上一级页面中打开<br><code>_top</code>    在最顶级（祖先）页面中打开</p>
+<p><strong>download 属性</strong><br>用于下载</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span> <span class="attr">download</span>&gt;</span>Download<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>如果HTTP响应的内容为：</p>
@@ -322,7 +475,7 @@
 <li><p>Content-type : text/html   这种格式，我们要实现下载就需要在a标签中写入download属性来下载这个文件</p>
 </li>
 </ol>
-<p><strong>href属性</strong></p>
+<p><strong>href 属性</strong><br>指定地址</p>
 <ol>
 <li>href=”<a href="http://qq.com&quot;" target="_blank" rel="noopener">http://qq.com&quot;</a>  http协议写法  可以跳转到QQ的官网  推荐使用</li>
 <li>href=”//qq.com” 无协议写法   当前文件什么协议a标签就会以什么协议去跳转</li>
@@ -330,12 +483,13 @@
 <li>如果不写href属性则a标签会变成一个span  没有了颜色和下划线</li>
 <li>如需要点击a不做任何动作可以用下面伪协议的第二种写法</li>
 </ol>
-<p><strong>伪协议</strong></p>
+<p><strong>伪协议</strong><br>这是一个历史遗留问题，一般推荐使用下面<code>2</code>的写法</p>
 <ol>
-<li>href=”javascript: alert(1);”  会弹出对话框</li>
-<li>href=”javascript: ;”    //点击之后什么都不做</li>
+<li><code>href=&quot;javascript: alert(1);&quot;</code>  //会弹出对话框</li>
+<li><code>href=&quot;javascript: ;&quot;</code>    //点击之后什么都不做</li>
 </ol>
-<h3 id="form-标签"><a href="#form-标签" class="headerlink" title="form 标签"></a>form 标签</h3><p>form 标签也是可以跳转页面的，会HTTP POST请求，不过要注意file协议不支持。<br>下面我们来看看它的属性<br><strong>action属性</strong></p>
+<h3 id="form-标签"><a href="#form-标签" class="headerlink" title="form 标签"></a>form 标签</h3><p>form 标签也是可以跳转页面的，会HTTP POST请求，不过要注意file协议不支持。<br>下面我们来看看它的属性</p>
+<p><strong>action 属性</strong></p>
 <ol>
 <li>action 属性的作用是用来指定请求路径</li>
 <li>如果form表单中没有提交按钮，你就无法提交form表单</li>
@@ -350,7 +504,8 @@
 <p>我们还可以再在forn表单中添加进提交的内容，如用户名和密码：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"users"</span> <span class="attr">method</span>=<span class="string">"post"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"xxx"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">name</span>=<span class="string">"xxx"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"提交"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>这样我们可以在form data中看到我们提交的内容<br><img src="https://i.loli.net/2019/08/20/p9SfBxQRXqGucoO.png" alt="Image _2_.png"><br>假如我们用中文作为密码呢？<br>我们会看到这样的Form Data内容<br><img src="https://i.loli.net/2019/08/20/XPKl9wzrgStZ6Rv.png" alt="Image _3_.png"><br>但是我们千万不能被骗了，当我们点击view source之后：<br><img src="https://i.loli.net/2019/08/20/FDMxrSG6LhbYqAc.png" alt="Image _4_.png"><br>这个格式因为http请求是由响应的第二部分的Content-Type决定的，我们可以看看上图的Content-Type类型，这就是它决定的第四部分内容（Form Data）的呈现方式。<br><strong>但如果我们是get的时候写了密码呢？</strong><br>答案是 它会让密码出现在查询参数那里，不会放在第四部分。<br><strong>关于submit ＆ button</strong><br><code>submit</code> 是用来提交数据的<br>如果一个form里面只有一个<code>button</code>按钮（没有type类型），那么它会自动升级为提交按钮，在页面中它会像这样：</p>
+<p>这样我们可以在form data中看到我们提交的内容<br><img src="https://i.loli.net/2019/08/20/p9SfBxQRXqGucoO.png" alt="Image _2_.png"><br>假如我们用中文作为密码呢？<br>我们会看到这样的Form Data内容<br><img src="https://i.loli.net/2019/08/20/XPKl9wzrgStZ6Rv.png" alt="Image _3_.png"><br>但是我们千万不能被骗了，当我们点击view source之后：<br><img src="https://i.loli.net/2019/08/20/FDMxrSG6LhbYqAc.png" alt="Image _4_.png"><br>这个格式因为http请求是由响应的第二部分的Content-Type决定的，我们可以看看上图的Content-Type类型，这就是它决定的第四部分内容（Form Data）的呈现方式。</p>
+<p><strong>但如果我们是get的时候写了密码呢？</strong><br>答案是 它会让密码出现在查询参数那里，不会放在第四部分。<br><strong>关于submit ＆ button</strong><br><code>submit</code> 是用来提交数据的<br>如果一个form里面只有一个<code>button</code>按钮（没有type类型），那么它会自动升级为提交按钮，在页面中它会像这样：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span>button<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="input-标签"><a href="#input-标签" class="headerlink" title="input 标签"></a>input 标签</h3><p>接下来我们来看下不同的type类型<br><strong>button</strong>  就是一个按钮</p>
@@ -379,9 +534,9 @@
 <p><strong>textarea</strong></p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">textarea</span> <span class="attr">name</span>=<span class="string">"love"</span> <span class="attr">style</span>=<span class="string">"resize:none; width:330px; height:100px;"</span> <span class="attr">cols</span>=<span class="string">"30"</span> <span class="attr">rows</span>=<span class="string">"10"</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>一般我们写多行文本框需要给它一个name，方便我们提交的时候看查询参数。<br>我们可以通过css的宽高来给它加样式，cols、rows不是很准确。<br>我们还可以让它的resize:none;这样它就不可以被拉动了</p>
-<h3 id="table-标签"><a href="#table-标签" class="headerlink" title="table 标签"></a>table 标签</h3><p>常用表格写法:<br>加了border之后，边框会重合，我们可以用css属性border-collapse: collapse;来清除它<br><img src="http://i1.fuimg.com/644982/491680d10bca07bd.png" alt="Markdown"></p>
-<p><strong>其他</strong><br><code>&lt;a href=&quot;#&quot;&gt;link&lt;/a&gt;</code>标签被点击后会发生什么？<br>页面锚点变成 #<br>页面滚动到顶部 </p>
+<p>一般我们写多行文本框需要给它一个name，方便我们提交的时候看查询参数。<br>我们可以通过css的宽高来给它加样式，<code>cols</code>、<code>rows</code>不是很准确。<br>我们还可以让它的<code>resize:none;</code>这样它就不可以被拉动了</p>
+<h3 id="table-标签"><a href="#table-标签" class="headerlink" title="table 标签"></a>table 标签</h3><p>常用表格写法:<br>加了border之后，边框会重合，我们可以用css属性<code>border-collapse: collapse;</code>来清除它<br><img src="http://i1.fuimg.com/644982/491680d10bca07bd.png" alt="Markdown"></p>
+<p><strong>其他</strong><br><code>&lt;a href=&quot;#&quot;&gt;link&lt;/a&gt;</code>标签被点击后会发生什么？<br>页面锚点变成 #，页面滚动到顶部 </p>
 
           
         
@@ -1065,7 +1220,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
