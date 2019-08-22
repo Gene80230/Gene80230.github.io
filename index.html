@@ -229,6 +229,186 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/22/继续学习CSS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Gene">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Gene’s Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/22/继续学习CSS/" itemprop="url">继续学习CSS</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-22T21:15:07+08:00">
+                2019-08-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="继续学习CSS"><a href="#继续学习CSS" class="headerlink" title="继续学习CSS"></a>继续学习CSS</h2><h3 id="高度是由什么决定的"><a href="#高度是由什么决定的" class="headerlink" title="高度是由什么决定的"></a>高度是由什么决定的</h3><p>div高度 由其内部文档流元素的 <code>高度总和</code> 决定</p>
+<blockquote>
+<p>文档流：文档内元素的流动方向</p>
+<ol>
+<li>内联元素由左往右流动，汉字会在遇到阻碍的时候换行，单词则不会换行，且会保持一个整体，如果要打断我们可以用css属性 work-break:break-all; </li>
+<li>块级元素由上到下流动，每个块级元素另起一行。</li>
+</ol>
+<ul>
+<li>内联元素<br>  一般由最高的那个元素的高度决定</li>
+<li>块级元素<br>  由它内部文档流元素的总和决定</li>
+</ul>
+</blockquote>
+<h3 id="解决设置width：100-后元素溢出的问题"><a href="#解决设置width：100-后元素溢出的问题" class="headerlink" title="解决设置width：100%后元素溢出的问题"></a>解决设置width：100%后元素溢出的问题</h3><p>当你给某个元素宽度100%之后，如有padding之类的属性，这个元素可能会超出，这时你应该给它在外层再嵌套一个div，之后只需要给这个div加入相同的属性就可以了</p>
+<h3 id="如何脱离文档流？"><a href="#如何脱离文档流？" class="headerlink" title="如何脱离文档流？"></a>如何脱离文档流？</h3><ul>
+<li>float     浮动</li>
+<li>postion:fixed;  相对于窗口定位</li>
+<li>postion：absolute    相对于加了<code>position：relative</code>的父元素定位</li>
+</ul>
+<h3 id="如何在div上面给一层遮罩？"><a href="#如何在div上面给一层遮罩？" class="headerlink" title="如何在div上面给一层遮罩？"></a>如何在div上面给一层遮罩？</h3><p>应先给div内部一个元素，此元素的bgcolor设置为有透明度的rgba即可</p>
+<h3 id="图片的设置方式"><a href="#图片的设置方式" class="headerlink" title="图片的设置方式"></a>图片的设置方式</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">background-position:center center;  //居中</span><br><span class="line">background-size:cover;      //自适应 全覆盖</span><br></pre></td></tr></table></figure>
+
+<h3 id="animation"><a href="#animation" class="headerlink" title="animation"></a>animation</h3><p>animation属性用来指定一组或多组动画，每组之间用逗号相隔。<br>该例中</p><p> 元素由浏览器窗口右边滑至左边</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line">  <span class="attribute">animation-duration</span>: <span class="number">3s</span>;</span><br><span class="line">  <span class="attribute">animation-name</span>: slidein;&#125;</span><br><span class="line"></span><br><span class="line">@<span class="keyword">keyframes</span> slidein &#123;</span><br><span class="line">  <span class="selector-tag">from</span> &#123;</span><br><span class="line">    <span class="attribute">margin-left</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">300%</span>; </span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="selector-tag">to</span> &#123;</span><br><span class="line">    <span class="attribute">margin-left</span>: <span class="number">0%</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  &#125;&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="过渡动画"><a href="#过渡动画" class="headerlink" title="过渡动画"></a>过渡动画</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">transition</span><span class="selector-pseudo">:box-shadow</span> 0<span class="selector-class">.3s</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="解决加了display-inline-block之后元素向下移的问题"><a href="#解决加了display-inline-block之后元素向下移的问题" class="headerlink" title="解决加了display:inline-block之后元素向下移的问题"></a>解决加了display:inline-block之后元素向下移的问题</h3><p>加了 <code>display:inline-block</code>之后一定要加<code>vertical-align:top</code></p>
+<h3 id="状态机"><a href="#状态机" class="headerlink" title="状态机"></a>状态机</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.portfolio</span> <span class="selector-class">.bar</span><span class="selector-class">.state-1</span> <span class="selector-class">.bar-inner</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>:<span class="number">28%</span>;</span><br><span class="line">    <span class="attribute">margin-left</span>:<span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.portfolio</span> <span class="selector-class">.bar</span><span class="selector-class">.state-2</span> <span class="selector-class">.bar-inner</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>:<span class="number">28%</span>;</span><br><span class="line">    <span class="attribute">margin-left</span>:<span class="number">96px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.portfolio</span> <span class="selector-class">.bar</span><span class="selector-class">.state-3</span> <span class="selector-class">.bar-inner</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>:<span class="number">22%</span>;</span><br><span class="line">    <span class="attribute">margin-left</span>:<span class="number">186px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">portfolio1.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    portfolioBar.className=<span class="string">"bar state-1"</span></span><br><span class="line">&#125;</span><br><span class="line">portfolio2.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    portfolioBar.className=<span class="string">"bar state-2"</span></span><br><span class="line">&#125;</span><br><span class="line">portfolio3.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    portfolioBar.className=<span class="string">"bar state-3"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><ul>
+<li><p>当你写了width，height之后，我们就需要line-height跟height一样高来自动居中。但这只在低像素值的时候有效。</p>
+</li>
+<li><p>不加width height ，我们可以加padding，这样不容易有bug。</p>
+</li>
+<li><p>CSS position 有哪些取值？<br>sticky、absolute、fixed、relative、static</p>
+</li>
+<li><p>字体默认的 line height 由字体设计师决定</p>
+</li>
+<li><p>CSS 中 width 的默认值是多少？<br>  auto</p>
+</li>
+<li><p>content-box 与 border-box 的区别是</p>
+<ol>
+<li>content-box 的 width 不包括 padding 和 border </li>
+<li>border-box 的 width 包括 padding 和 border</li>
+</ol>
+</li>
+<li><p>关于文档流（Normal Flow）</p>
+<ol>
+<li>文档流代表元素在文档中的「流动」方向 </li>
+<li>float:left、position:fixed、position:absolute 都能使元素脱离文档流</li>
+</ol>
+</li>
+<li><p>关于 display: inline 元素，描述正确的是</p>
+<ol>
+<li>给 display: inline 元素设置宽高是无效的</li>
+<li>给 display: inline 元素设置 margin-top margin-top 是无效的</li>
+</ol>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/21/开始学习CSS/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1220,7 +1400,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
