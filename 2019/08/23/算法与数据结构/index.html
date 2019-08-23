@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="算法算法 让计算机根据你的命令工作，需要输入指令按步骤来解决问题的方式，叫做算法  结构化编程 一行一行执行 有条件控制语句if…else… 有循环控制语句 while(exp) do…  流程图 算法五个特征 输入：一个算法必须有零个或以上输入量 输出：一个算法应有一个或以上输出量，输出量是算法计算的结果。 明确性：算法的描述必须无歧义，以保证算法的实际执行结果是精确地匹配要求或期望，通常要求实">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法与数据结构">
+<meta property="og:url" content="http://yoursite.com/2019/08/23/算法与数据结构/index.html">
+<meta property="og:site_name" content="Gene’s Notes">
+<meta property="og:description" content="算法算法 让计算机根据你的命令工作，需要输入指令按步骤来解决问题的方式，叫做算法  结构化编程 一行一行执行 有条件控制语句if…else… 有循环控制语句 while(exp) do…  流程图 算法五个特征 输入：一个算法必须有零个或以上输入量 输出：一个算法应有一个或以上输出量，输出量是算法计算的结果。 明确性：算法的描述必须无歧义，以保证算法的实际执行结果是精确地匹配要求或期望，通常要求实">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://i1.fuimg.com/644982/845f7e601d2c41ca.png">
+<meta property="og:image" content="http://i1.fuimg.com/644982/46db6ea26807fd19.png">
+<meta property="og:image" content="http://i1.fuimg.com/644982/eaa7bbc7dcd752b1.png">
+<meta property="og:image" content="http://i1.fuimg.com/644982/2ccdff63f59f3679.png">
+<meta property="og:image" content="http://i1.fuimg.com/644982/b805b44e7d2705e0.png">
+<meta property="og:updated_time" content="2019-08-23T15:53:27.674Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="算法与数据结构">
+<meta name="twitter:description" content="算法算法 让计算机根据你的命令工作，需要输入指令按步骤来解决问题的方式，叫做算法  结构化编程 一行一行执行 有条件控制语句if…else… 有循环控制语句 while(exp) do…  流程图 算法五个特征 输入：一个算法必须有零个或以上输入量 输出：一个算法应有一个或以上输出量，输出量是算法计算的结果。 明确性：算法的描述必须无歧义，以保证算法的实际执行结果是精确地匹配要求或期望，通常要求实">
+<meta name="twitter:image" content="http://i1.fuimg.com/644982/845f7e601d2c41ca.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/08/23/算法与数据结构/">
+
+
+
+
+
+  <title>算法与数据结构 | Gene’s Notes</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Gene’s Notes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/23/算法与数据结构/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Gene">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Gene’s Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">算法与数据结构</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-23T23:31:55+08:00">
+                2019-08-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><h3 id="算法-1"><a href="#算法-1" class="headerlink" title="算法"></a>算法</h3><blockquote>
+<p>让计算机根据你的命令工作，需要输入指令按步骤来解决问题的方式，叫做算法</p>
+</blockquote>
+<h3 id="结构化编程"><a href="#结构化编程" class="headerlink" title="结构化编程"></a>结构化编程</h3><ol>
+<li>一行一行执行</li>
+<li>有条件控制语句if…else…</li>
+<li>有循环控制语句 while(exp) do…</li>
+</ol>
+<h3 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h3><p><img src="http://i1.fuimg.com/644982/845f7e601d2c41ca.png" alt="Markdown"></p>
+<h3 id="算法五个特征"><a href="#算法五个特征" class="headerlink" title="算法五个特征"></a>算法五个特征</h3><ul>
+<li>输入：一个算法必须有零个或以上输入量</li>
+<li>输出：一个算法应有一个或以上输出量，输出量是算法计算的结果。</li>
+<li>明确性：算法的描述必须无歧义，以保证算法的实际执行结果是精确地匹配要求或期望，通常要求实际运行结果是确定的。</li>
+<li>有限性：依据图灵的定义，一个算法是能够被任何图灵完备系统模拟的一串运算，而图灵机只有有限个状态；有限个输入符号和有限个转移函数（指令）。而一些定义更规定算法必须在有限个步骤内完成任务。</li>
+<li>有效性：又称可行性。能够实现，算法中描述的操作都是可以通过已经实现的基本运算执行有限次来实现。</li>
+</ul>
+<h3 id="排序算法"><a href="#排序算法" class="headerlink" title="排序算法"></a>排序算法</h3><ul>
+<li>体育委员两两摸头法（冒泡排序）<br>  进行多轮排序，依次对比两个数的大小，大的往后面靠，一轮之后大的数就在最后了，重复多次可得到从小到大的数组 </li>
+<li>体育老师一指禅法（选择排序） </li>
+<li>起扑克牌法（插入排序）<br>  选择第一个数站定，接下来选择其他的数根前一个站定的数进行对比，大的往右，小的往左，每次拿到新的数就重复可得到排序之后的数组</li>
+<li>强迫症收扑克牌法（计数排序）</li>
+<li>快排 （以随机一位数为基准，小的在它的左边，大的在右边进行排序）</li>
+</ul>
+<h2 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h2><p>一般来说是这样的：</p>
+<ul>
+<li>我们要解决一个跟数据相关的问题</li>
+<li>我们要分析这个问题，想出对应的数据结构</li>
+<li>分析数据结构，想出算法</li>
+</ul>
+<blockquote>
+<p>数据结构和算法是互相依存、不可分开的<br>你学习完排序算法，就能了解常见的数据结构</p>
+</blockquote>
+<h3 id="哈希表（Hash-Table）"><a href="#哈希表（Hash-Table）" class="headerlink" title="哈希表（Hash Table）"></a>哈希表（Hash Table）</h3><ol>
+<li>计数排序中的桶（复杂度 O(n+max)，比快排还快<ul>
+<li>复杂度 n代表需要遍历的数组项，max是数组中最大的数字</li>
+<li>如我们在统计10000个人的年龄，复杂度为O(10000+200)</li>
+<li>如果用快拍来统计10000个人的年龄，复杂度为O(10000*log10000)</li>
+</ul>
+</li>
+<li><a href="http://bubkoo.com/2014/01/15/sort-algorithm/bucket-sort/" target="_blank" rel="noopener">桶排序</a> 与计数排序的区别</li>
+<li><a href="http://bubkoo.com/2014/01/15/sort-algorithm/radix-sort/" target="_blank" rel="noopener">基数排序</a> 与计数排序的区别<ul>
+<li>基数排序比较适合一到几万不等数进行排列 </li>
+</ul>
+</li>
+</ol>
+<p><strong>计数排序的缺点：</strong></p>
+<ul>
+<li>它需要一个hash</li>
+<li>计数排序无法对小数和负数进行排序</li>
+</ul>
+<h3 id="队列-Queue-和栈-Stack"><a href="#队列-Queue-和栈-Stack" class="headerlink" title="队列(Queue)和栈(Stack)"></a>队列(Queue)和栈(Stack)</h3><p><strong>队列(Queue)的特点：</strong></p>
+<ul>
+<li>先进先出    如：排队  用数组的push( )和shift( )方法</li>
+<li>可以用数组实现 </li>
+</ul>
+<p><strong>栈(Stack)的特点：</strong></p>
+<ul>
+<li>先进后出</li>
+<li>可以用数组实现</li>
+<li>举例：电梯 ＆ 盗梦空间中的梦境  用数组的push( )和pop( )方法</li>
+</ul>
+<h3 id="链表-Linked-List-和树-tree"><a href="#链表-Linked-List-和树-tree" class="headerlink" title="链表(Linked List)和树(tree)"></a>链表(Linked List)和树(tree)</h3><p><strong>链表(Linked List)</strong></p>
+<ul>
+<li>克服数组中删除东西的巨大操作（数组无法直接删除中间的一项，链表可以做到），于是我们用到了链表。</li>
+<li>用哈希（JS里面用对象表示哈希）实现链表。</li>
+<li>hand，node的概念</li>
+</ul>
+<p><img src="http://i1.fuimg.com/644982/46db6ea26807fd19.png" alt="Markdown"><br>上图就是一个链表，把a1的next指向a3,a2无形中就被删除了，代码如下：<br><img src="http://i1.fuimg.com/644982/eaa7bbc7dcd752b1.png" alt="Markdown"></p>
+<p><strong>树(tree)</strong><br>什么时候用到树呢？有层级结构时就可以用到树，如页面DOM </p>
+<ul>
+<li>层数、深度、节点个数</li>
+<li>二叉树：每次最多分两个叉，一个也算。<ul>
+<li>一般二叉树的第i层最多拥有 2^（i-1）个节点数，深度为k的二叉树最多总共有2^(k+1)-1个节点数</li>
+</ul>
+</li>
+<li>满二叉树(Full Tree)：节点都是两个叉。</li>
+<li>完全二叉树(Complete Tree)：一棵二叉树中，除最后一层外的其余层都是满的，且最后一层是满的或者右边缺失连续若干节点，则为完全二叉树</li>
+</ul>
+<p><img src="http://i1.fuimg.com/644982/2ccdff63f59f3679.png" alt="Markdown"></p>
+<ul>
+<li>完全二叉树和满二叉树都可以用数组实现</li>
+<li>其他树可以用哈希（对象）来实现</li>
+<li>操作：增删改查</li>
+<li>堆排序用到了tree</li>
+<li>其他：B树、红黑树、AVL树</li>
+</ul>
+<h3 id="什么叫堆？"><a href="#什么叫堆？" class="headerlink" title="什么叫堆？"></a>什么叫堆？</h3><ul>
+<li>堆可以视作一棵完全的二叉树，子节点永远要比父节点小，这就是堆。</li>
+<li>堆有最大堆（最大的元素在根节点/堆顶），且每个父节点的元素值都大于孩子节点</li>
+<li>堆还有最小堆，跟最大堆是相反的</li>
+</ul>
+<p><img src="http://i1.fuimg.com/644982/b805b44e7d2705e0.png" alt="Markdown" title="堆调整"></p>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>什么时候用到链表或者数组呢？</p>
+<ul>
+<li>当你不删除，或者只删除头尾的时候，我们可以用数组。</li>
+<li>如你经常从中间删除则用列表</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/08/22/继续学习CSS/" rel="next" title="继续学习CSS">
+                <i class="fa fa-chevron-left"></i> 继续学习CSS
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Gene</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#算法"><span class="nav-number">1.</span> <span class="nav-text">算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#算法-1"><span class="nav-number">1.1.</span> <span class="nav-text">算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结构化编程"><span class="nav-number">1.2.</span> <span class="nav-text">结构化编程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#流程图"><span class="nav-number">1.3.</span> <span class="nav-text">流程图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法五个特征"><span class="nav-number">1.4.</span> <span class="nav-text">算法五个特征</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#排序算法"><span class="nav-number">1.5.</span> <span class="nav-text">排序算法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据结构"><span class="nav-number">2.</span> <span class="nav-text">数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#哈希表（Hash-Table）"><span class="nav-number">2.1.</span> <span class="nav-text">哈希表（Hash Table）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#队列-Queue-和栈-Stack"><span class="nav-number">2.2.</span> <span class="nav-text">队列(Queue)和栈(Stack)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#链表-Linked-List-和树-tree"><span class="nav-number">2.3.</span> <span class="nav-text">链表(Linked List)和树(tree)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么叫堆？"><span class="nav-number">2.4.</span> <span class="nav-text">什么叫堆？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他"><span class="nav-number">2.5.</span> <span class="nav-text">其他</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Gene</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
