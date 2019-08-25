@@ -101,7 +101,7 @@
 <meta property="og:image" content="http://i1.fuimg.com/644982/03f91cd8d8e6aa3b.png">
 <meta property="og:image" content="http://i1.fuimg.com/644982/ca5b9c208c719530.png">
 <meta property="og:image" content="http://i1.fuimg.com/644982/cf0e4bd631e9003e.png">
-<meta property="og:updated_time" content="2019-08-24T13:36:01.277Z">
+<meta property="og:updated_time" content="2019-08-25T05:15:39.525Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据类型和typeof运算符">
 <meta name="twitter:description" content="数据类型和typeof运算符数据类型JavaScript 语言的每一个值，都属于某一种数据类型。JavaScript 的数据类型，共有七种。  数值（number）：整数和小数（比如1和3.14） 字符串（string）：文本（比如Hello World）。 布尔值（boolean）：表示真伪的两个特殊值，即true（真）和false（假） undefined：表示“未定义”或不存在，即由于目前没">
@@ -327,8 +327,7 @@
 </ul>
 <p><strong>原始类型</strong><br><code>数值</code>、<code>字符串</code>、<code>布尔值</code>这三种类型，合称为原始类型（primitive type）的值，即它们是最基本的数据类型，不能再细分了。</p>
 <p><strong>两个特殊值</strong><br>至于<code>undefined</code>和<code>null</code>，一般将它们看成两个特殊值。</p>
-<p><strong>合成类型</strong><br><code>对象</code>则称为合成类型（complex type）的值，因为一个对象往往是多个原始类型的值的合成，可以看作是一个存放各种值的容器。</p>
-<p>对象是最复杂的数据类型，又可以分成三个子类型。</p>
+<p><strong>合成类型</strong><br><code>对象</code>则称为合成类型（complex type）的值，因为一个对象往往是多个原始类型的值的合成，可以看作是一个存放各种值的容器。<br><code>对象</code>是最复杂的数据类型，又可以分成三个子类型。</p>
 <ul>
 <li>狭义的对象（object）</li>
 <li>数组（array）</li>
@@ -360,15 +359,14 @@
 <p>这两个需要格外注意，空字符串的长度为0。空格字符串的长度为1</p>
 <p><strong>转义</strong></p>
 <ul>
-<li>一般转义方法<br>当我们需要在字符串里面表示单/双引号的时候，我们可以用以下方法：<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">" ' "</span></span><br></pre></td></tr></table></figure>
-
+<li><p>一般转义方法<br>当我们需要在字符串里面表示单/双引号的时候，我们可以用以下方法：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">" ' "</span></span><br></pre></td></tr></table></figure>
 </li>
-</ul>
-<p>当然我们有些时候因为需要有单双引号在同一个字符串中,这个时候用上面的放回会报错</p>
+<li><p>当然我们有些时候因为需要有单双引号在同一个字符串中,这个时候用上面的方法会报错</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">" ' "</span><span class="string">"</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>如何表示引号<br>这个时候我们需要用反斜杠来表示转义<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">"\ ' "</span><span class="string">"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如何表示引号<br>这个时候我们需要用反斜杠来表示转义</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">"\ ' "</span><span class="string">"</span></span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
@@ -377,11 +375,11 @@
 <li><p>如何表示特殊符号<br>有时候我们需要一些特殊的符号，如回车、Tab（制表符）、反斜杠（\）<br>我们可以这样表示：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> enter = <span class="string">"\ n "</span>   <span class="comment">//回车</span></span><br><span class="line"><span class="keyword">var</span> t = <span class="string">" \t "</span>  <span class="comment">//Tab 制表符</span></span><br><span class="line"><span class="keyword">var</span> b = <span class="string">" \\ "</span>  <span class="comment">//反斜杠</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p>多行字符串<br><img src="http://i1.fuimg.com/644982/0dad00a2b4d4ac09.png" alt="Markdown"><br>这样会报错，我们可以用反斜杠来处理它:<br><img src="http://i1.fuimg.com/644982/4fa263a139178f5c.png" alt="Markdown"><br>但一般不建议这样做，我们更推荐这样：<br><img src="http://i1.fuimg.com/644982/30eca457fd489282.png" alt="Markdown"><br>原因是当斜杠后面有空格时也是会报错的<br><img src="http://i1.fuimg.com/644982/a9121d3ca2b207b6.png" alt="Markdown"><br>ES6的新语法可以用’ ` ‘  也就是键盘1隔壁那个反引号，可以直接用来写多行字符串</p>
+<li><p>多行字符串<br><img src="http://i1.fuimg.com/644982/0dad00a2b4d4ac09.png" alt="Markdown"><br>这样会报错，我们可以用反斜杠来处理它:<br><img src="http://i1.fuimg.com/644982/4fa263a139178f5c.png" alt="Markdown"><br>但一般不建议这样做，我们更推荐这样：<br><img src="http://i1.fuimg.com/644982/30eca457fd489282.png" alt="Markdown"><br>原因是当斜杠后面有空格时也是会报错的<br><img src="http://i1.fuimg.com/644982/a9121d3ca2b207b6.png" alt="Markdown"><br>ES6的新语法可以用```  也就是键盘1隔壁那个反引号，可以直接用来写多行字符串</p>
 </li>
 </ul>
-<h3 id="Boolean"><a href="#Boolean" class="headerlink" title="Boolean"></a>Boolean</h3><p><strong>true</strong><br>表示真</p>
-<p><strong>false</strong><br>表示假</p>
+<h3 id="Boolean"><a href="#Boolean" class="headerlink" title="Boolean"></a>Boolean</h3><p><code>true</code>表示真</p>
+<p><code>false</code>表示假</p>
 <p>最常见的用法就是用来判断:</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(a)&#123;  <span class="comment">//如果a是真的就执行下面的代码，是假的就不执行</span></span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -396,13 +394,13 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = <span class="string">'gene'</span></span><br><span class="line"><span class="keyword">var</span> age = <span class="number">17</span></span><br><span class="line"><span class="keyword">var</span> gender = <span class="string">'male'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//我们可以把它们写在一个对象里面</span></span><br><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">name : <span class="string">'gene'</span>,   <span class="comment">//key引号可有可无</span></span><br><span class="line"><span class="string">'age'</span> : <span class="number">17</span>,</span><br><span class="line"><span class="string">'children'</span> : &#123;<span class="attr">name</span> : <span class="string">'xxx'</span>, <span class="attr">age</span> : <span class="number">2</span>,&#125;    <span class="comment">//对象中还可加入其它对象</span></span><br><span class="line"><span class="string">'gender'</span> : <span class="string">'male'</span>,     <span class="comment">//最后一个key后面的逗号如果在ES3（IE7以下）是不可以的</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">person[<span class="string">'name'</span>]  <span class="comment">//要用的时候这样引用就可以了</span></span><br><span class="line">person.name  <span class="comment">//等同于上面</span></span><br></pre></td></tr></table></figure>
 
 <p><strong>如何读取</strong><br><img src="http://i1.fuimg.com/644982/2ef8913ccdcbf078.png" alt="Markdown"></p>
-<p>当你不用引号时要遵循变量的命名规则，上图中对象obj的key是数字开头，这样会导致报错，如果你想用数字开头命名key，这里推荐你给它加上引号。</p>
+<p>当你不用引号时要遵循变量的命名规则，上图中对象<code>obj</code>的key是数字开头，这样会导致报错，如果你想用数字开头命名key，这里推荐你给它加上引号。</p>
 <p><strong>in运算符 &amp; 删除key的正确方式：</strong></p>
 <ul>
-<li>in运算符<br><code>in</code>可以让你知道一个变量在不在某个对象中，在为true，不在就为false<br><img src="http://i1.fuimg.com/644982/680ab47d2f85e929.png" alt="Markdown"></li>
-<li>删除key（delete命令）<br>上面第一段删除key的操作为true，表示已经成功让key在对象中被删除。<br>后面的演示只是让key的值等于undefined而已，在访问用<code>in</code>时还等于true，可以看到并不是删除。</li>
+<li><code>in</code>运算符<br><code>in</code>可以让你知道一个变量在不在某个对象中，在为true，不在就为false<br><img src="http://i1.fuimg.com/644982/680ab47d2f85e929.png" alt="Markdown"></li>
+<li>删除key（<code>delete</code>命令）<br>上面第一段删除key的操作为<code>true</code>，表示已经成功让key在对象中被删除。<br>后面的演示只是让key的值等于undefined而已，在访问用<code>in</code>时还等于<code>true</code>，可以看到并不是删除。</li>
 </ul>
-<p><strong>for…in循环</strong><br>for…in循环用来遍历一个对象的全部属性。<br>下面是一个使用for…in循环，提取对象属性名的例子<br><img src="http://i1.fuimg.com/644982/0c594d83c6612e63.png" alt="Markdown"></p>
+<p><strong>for…in循环</strong><br><code>for...in</code>循环用来遍历一个对象的全部属性。<br>下面是一个使用<code>for...in</code>循环，提取对象属性名的例子<br><img src="http://i1.fuimg.com/644982/0c594d83c6612e63.png" alt="Markdown"></p>
 <p>注意：</p>
 <ul>
 <li>它遍历的是对象所有可遍历（enumerable）的属性，会跳过不可遍历的属性。它</li>
