@@ -101,7 +101,7 @@
 <meta property="og:image" content="http://i1.fuimg.com/644982/03f91cd8d8e6aa3b.png">
 <meta property="og:image" content="http://i1.fuimg.com/644982/ca5b9c208c719530.png">
 <meta property="og:image" content="http://i1.fuimg.com/644982/cf0e4bd631e9003e.png">
-<meta property="og:updated_time" content="2019-08-25T05:47:40.571Z">
+<meta property="og:updated_time" content="2019-08-25T05:53:06.366Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据类型和typeof运算符">
 <meta name="twitter:description" content="数据类型和typeof运算符数据类型JavaScript 语言的每一个值，都属于某一种数据类型。JavaScript 的数据类型，共有七种。  数值（number）：整数和小数（比如1和3.14） 字符串（string）：文本（比如Hello World）。 布尔值（boolean）：表示真伪的两个特殊值，即true（真）和false（假） undefined：表示“未定义”或不存在，即由于目前没">
@@ -375,9 +375,14 @@
 <li><p>如何表示特殊符号<br>有时候我们需要一些特殊的符号，如回车、Tab（制表符）、反斜杠（\）<br>我们可以这样表示：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> enter = <span class="string">"\ n "</span>   <span class="comment">//回车</span></span><br><span class="line"><span class="keyword">var</span> t = <span class="string">" \t "</span>  <span class="comment">//Tab 制表符</span></span><br><span class="line"><span class="keyword">var</span> b = <span class="string">" \\ "</span>  <span class="comment">//反斜杠</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p>多行字符串<br><img src="http://i1.fuimg.com/644982/0dad00a2b4d4ac09.png" alt="Markdown"><br>这样会报错，我们可以用反斜杠来处理它:<br><img src="http://i1.fuimg.com/644982/4fa263a139178f5c.png" alt="Markdown"><br>但一般不建议这样做，我们更推荐这样：<br><img src="http://i1.fuimg.com/644982/30eca457fd489282.png" alt="Markdown"><br>原因是当斜杠后面有空格时也是会报错的<br><img src="http://i1.fuimg.com/644982/a9121d3ca2b207b6.png" alt="Markdown"><br>ES6的新语法可以用``&lt;!–￼9–&gt;</p>
+<li><p>多行字符串<br><img src="http://i1.fuimg.com/644982/0dad00a2b4d4ac09.png" alt="Markdown"><br>这样会报错，我们可以用反斜杠来处理它:<br><img src="http://i1.fuimg.com/644982/4fa263a139178f5c.png" alt="Markdown"><br>但一般不建议这样做，我们更推荐这样：<br><img src="http://i1.fuimg.com/644982/30eca457fd489282.png" alt="Markdown"><br>原因是当斜杠后面有空格时也是会报错的<br><img src="http://i1.fuimg.com/644982/a9121d3ca2b207b6.png" alt="Markdown"><br>ES6的新语法可以用<code>&amp;#96;</code>  也就是键盘1隔壁那个反引号，可以直接用来写多行字符串</p>
 </li>
 </ul>
+<h3 id="Boolean"><a href="#Boolean" class="headerlink" title="Boolean"></a>Boolean</h3><p><code>true</code>表示真</p>
+<p><code>false</code>表示假</p>
+<p>最常见的用法就是用来判断:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(a)&#123;  <span class="comment">//如果a是真的就执行下面的代码，是假的就不执行</span></span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>这里还要再说下 &amp;&amp;（与运算）、||（或运算）<br>这两个逻辑运算符的判断方式：<br><img src="http://i1.fuimg.com/644982/f77d532dd1873030.png" alt="Markdown"></p>
 <h3 id="null"><a href="#null" class="headerlink" title="null"></a>null</h3><p>这是 空 的意思，一般出现有一个对象(object)，暂时不需要赋值你可以把它赋值为null</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = <span class="literal">null</span></span><br></pre></td></tr></table></figure>
@@ -556,7 +561,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型和typeof运算符"><span class="nav-number">1.</span> <span class="nav-text">数据类型和typeof运算符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据类型"><span class="nav-number">1.1.</span> <span class="nav-text">数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Number"><span class="nav-number">1.2.</span> <span class="nav-text">Number</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#String"><span class="nav-number">1.3.</span> <span class="nav-text">String</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.4.</span> <span class="nav-text">null</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.5.</span> <span class="nav-text">undefined</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对象（Object）"><span class="nav-number">1.6.</span> <span class="nav-text">对象（Object）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#typeof运算符"><span class="nav-number">1.7.</span> <span class="nav-text">typeof运算符</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型和typeof运算符"><span class="nav-number">1.</span> <span class="nav-text">数据类型和typeof运算符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据类型"><span class="nav-number">1.1.</span> <span class="nav-text">数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Number"><span class="nav-number">1.2.</span> <span class="nav-text">Number</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#String"><span class="nav-number">1.3.</span> <span class="nav-text">String</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Boolean"><span class="nav-number">1.4.</span> <span class="nav-text">Boolean</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.5.</span> <span class="nav-text">null</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.6.</span> <span class="nav-text">undefined</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对象（Object）"><span class="nav-number">1.7.</span> <span class="nav-text">对象（Object）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#typeof运算符"><span class="nav-number">1.8.</span> <span class="nav-text">typeof运算符</span></a></li></ol></li></ol></div>
             
 
           </div>
