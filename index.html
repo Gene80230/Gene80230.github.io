@@ -306,7 +306,7 @@
 <p><strong>Boolean</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> b = <span class="literal">true</span></span><br><span class="line">b.toString()</span><br><span class="line"></span><br><span class="line"><span class="comment">//  "true"</span></span><br></pre></td></tr></table></figure>
 
-<p><strong>Null</strong><br><img src="http://i1.fuimg.com/644982/fd77f6d8d419bd06.png" alt="Markdown"><br>浏览器会报错，并说明null是没有toString这个API的，不能读取null的toString方法。</p>
+<p><strong>Null</strong><br><img src="http://i1.fuimg.com/644982/fd77f6d8d419bd06.png" alt="Markdown"><br>浏览器会报错，并说明<code>null</code>是没有<code>toString</code>这个API的，不能读取<code>nul</code>l的<code>toString</code>方法。</p>
 <p><strong>Undefined</strong><br>与null一致</p>
 <p><strong>Object</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> object = &#123;<span class="string">'name'</span>:<span class="string">'Gene'</span>&#125;</span><br><span class="line">object.toString()</span><br><span class="line"></span><br><span class="line"><span class="comment">//  "[object Object]"</span></span><br></pre></td></tr></table></figure>
@@ -316,22 +316,22 @@
 <p>让我们看下另外一个例子<br><img src="http://i1.fuimg.com/644982/769c860f10dcc22e.png" alt="Markdown"><br>有些地方需要用到<code>string</code>，它就会去调用<code>toString()</code></p>
 <p>正常变成字符串的toString方法实在是有点长，我们可以用更简单的方法把各种类型的变量变成字符串：</p>
 <h4 id="window-String"><a href="#window-String" class="headerlink" title="window.String( )"></a>window.String( )</h4><p><img src="http://i1.fuimg.com/644982/36f169925b8f2eba.png" alt="Markdown"></p>
-<h4 id="目标与’-‘（空字符串）相加"><a href="#目标与’-‘（空字符串）相加" class="headerlink" title="目标与’ ‘（空字符串）相加"></a>目标与’ ‘（空字符串）相加</h4><p><img src="http://i1.fuimg.com/644982/afd06141f44c6aef.png" alt="Markdown"><br>与toString方法不同的是，它可以把null和undefined也变成字符串’+’ 会尝试把两边都变成字符串，这个方法就是利用了加号的这个特性。<br><img src="http://i1.fuimg.com/644982/2e29a9f036d571c5.png" alt="Markdown"><br>这也是1+字符串1 为什么会等于字符串11</p>
+<h4 id="目标与’-‘（空字符串）相加"><a href="#目标与’-‘（空字符串）相加" class="headerlink" title="目标与’ ‘（空字符串）相加"></a>目标与’ ‘（空字符串）相加</h4><p><img src="http://i1.fuimg.com/644982/afd06141f44c6aef.png" alt="Markdown"><br>与toString方法不同的是，它可以把<code>null</code>和<code>undefined</code>也变成字符串，<code>+</code> 会尝试把两边都变成字符串，这个方法就是利用了加号的这个特性。<br><img src="http://i1.fuimg.com/644982/2e29a9f036d571c5.png" alt="Markdown"><br>这也是1+字符串1 为什么会等于字符串11</p>
 <h3 id="各个类型转Boolean"><a href="#各个类型转Boolean" class="headerlink" title="各个类型转Boolean"></a>各个类型转Boolean</h3><h4 id="Boolean-x"><a href="#Boolean-x" class="headerlink" title="Boolean(x)"></a>Boolean(x)</h4><p><img src="http://i1.fuimg.com/644982/65cef1430775271d.png" alt="Markdown"><br>其实我们可以用更简单的方法，两个感叹号就搞定了。</p>
 <h4 id="x"><a href="#x" class="headerlink" title="!!x"></a>!!x</h4><p><img src="http://i1.fuimg.com/644982/19dc57057827ec3b.png" alt="Markdown"></p>
 <p><strong>五个falsy值</strong><br>部分类型中都有一个或以上false值（在Boolean上下稳重认定可转换为false的值）</p>
 <ul>
-<li>0 NaN (Number)</li>
-<li>‘’ (String)</li>
-<li>null (Null)</li>
-<li>undefined (Nudefined)</li>
+<li><code>0</code> <code>NaN</code> (<code>Number</code>类型)</li>
+<li><code>&#39;&#39;</code>(空字符串) (<code>String</code>类型)</li>
+<li><code>null</code> (<code>Null</code>)</li>
+<li><code>undefined</code> (<code>Undefined</code>)</li>
 </ul>
 <p>对象是没有falsy值的,所有的对象都是<code>true</code>。</p>
 <h3 id="各个类型转Number"><a href="#各个类型转Number" class="headerlink" title="各个类型转Number"></a>各个类型转Number</h3><h4 id="Numner"><a href="#Numner" class="headerlink" title="Numner"></a>Numner</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Numner(<span class="string">'1'</span>) <span class="comment">//1</span></span><br></pre></td></tr></table></figure>
 
 <h4 id="parseInt"><a href="#parseInt" class="headerlink" title="parseInt"></a>parseInt</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.parseInt(<span class="string">'1'</span>,<span class="number">10</span>) <span class="comment">//1</span></span><br></pre></td></tr></table></figure>
 
-<h4 id="转为小数"><a href="#转为小数" class="headerlink" title="转为小数"></a>转为小数</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">parseFloat</span>(<span class="string">'1.23'</span>)   <span class="comment">// 1.23</span></span><br></pre></td></tr></table></figure>
+<h4 id="转为小数-parseFloat"><a href="#转为小数-parseFloat" class="headerlink" title="转为小数 parseFloat"></a>转为小数 parseFloat</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">parseFloat</span>(<span class="string">'1.23'</span>)   <span class="comment">// 1.23</span></span><br></pre></td></tr></table></figure>
 
 <h4 id="减去一个数字"><a href="#减去一个数字" class="headerlink" title="减去一个数字"></a>减去一个数字</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'1'</span>- <span class="number">0</span>   <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
 
