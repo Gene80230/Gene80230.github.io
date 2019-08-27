@@ -103,7 +103,7 @@ JavaScript 语言的每一个值，都属于某一种数据类型。JavaScript �
 ![Markdown](http://i1.fuimg.com/644982/30eca457fd489282.png)
 原因是当斜杠后面有空格时也是会报错的
 ![Markdown](http://i1.fuimg.com/644982/a9121d3ca2b207b6.png)
-ES6的新语法可以用`&#96;`  也就是键盘1隔壁那个反引号，可以直接用来写多行字符串
+ES6的新语法可以用'`' , 也就是键盘1隔壁那个反引号，可以直接用来写多行字符串。
 
 ### Boolean
 `true`表示真
