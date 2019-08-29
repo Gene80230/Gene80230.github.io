@@ -94,7 +94,7 @@
 <meta property="og:image" content="http://i1.fuimg.com/644982/2e29a9f036d571c5.png">
 <meta property="og:image" content="http://i1.fuimg.com/644982/65cef1430775271d.png">
 <meta property="og:image" content="http://i1.fuimg.com/644982/19dc57057827ec3b.png">
-<meta property="og:updated_time" content="2019-08-27T17:33:46.338Z">
+<meta property="og:updated_time" content="2019-08-29T15:13:48.912Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基本类型的转换">
 <meta name="twitter:description" content="基本类型的类型转换各个类型转StringtoString()方法Number 1234var n = 1n.toString()//  &quot;1&quot;  Boolean 1234var b = trueb.toString()//  &quot;true&quot;  Null浏览器会报错，并说明null是没有toString这个API的，不能读取null的toString方法。 Undefined与null一致 Objec">
@@ -334,7 +334,7 @@
 <li><code>null</code> (<code>Null</code>)</li>
 <li><code>undefined</code> (<code>Undefined</code>)</li>
 </ul>
-<p>对象是没有falsy值的,所有的对象都是<code>true</code>。</p>
+<p>对象是没有<code>falsy</code>值的,所有的对象都是<code>true</code>。</p>
 <h3 id="各个类型转Number"><a href="#各个类型转Number" class="headerlink" title="各个类型转Number"></a>各个类型转Number</h3><h4 id="Numner"><a href="#Numner" class="headerlink" title="Numner"></a>Numner</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Numner(<span class="string">'1'</span>) <span class="comment">//1</span></span><br></pre></td></tr></table></figure>
 
 <h4 id="parseInt"><a href="#parseInt" class="headerlink" title="parseInt"></a>parseInt</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.parseInt(<span class="string">'1'</span>,<span class="number">10</span>) <span class="comment">//1</span></span><br></pre></td></tr></table></figure>
@@ -344,6 +344,9 @@
 <h4 id="减去一个数字"><a href="#减去一个数字" class="headerlink" title="减去一个数字"></a>减去一个数字</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'1'</span>- <span class="number">0</span>   <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
 
 <h4 id="取值以正数的形式"><a href="#取值以正数的形式" class="headerlink" title="取值以正数的形式"></a>取值以正数的形式</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">+ <span class="string">'1'</span>  <span class="comment">//1</span></span><br></pre></td></tr></table></figure>
+
+<p> 这一节只涉及基本类型的转换，下一节我们来看看对象的转换。</p>
+
       
     </div>
     
@@ -376,6 +379,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/08/29/对象转换和内存图解/" rel="prev" title="对象转换和内存图解">
+                对象转换和内存图解 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -452,7 +459,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
