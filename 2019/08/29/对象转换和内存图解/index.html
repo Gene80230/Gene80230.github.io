@@ -98,8 +98,8 @@
 <meta property="og:image" content="http://i2.tiimg.com/644982/ebb0cb5679bb6204.png">
 <meta property="og:image" content="http://i2.tiimg.com/644982/64ffa4db8fabbc66.png">
 <meta property="og:image" content="http://i2.tiimg.com/644982/fab11e71e10d0a5b.png">
-<meta property="og:image" content="http://i2.tiimg.com/644982/2379dc73254a1124.png">
-<meta property="og:updated_time" content="2019-08-29T15:36:17.954Z">
+<meta property="og:image" content="http://i2.tiimg.com/644982/fc50ceb13088df19.png">
+<meta property="og:updated_time" content="2019-08-29T15:53:13.238Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="对象转换和内存图解">
 <meta name="twitter:description" content="内存图解与Object类型转换对象跟基本类型的存储方式是有所差异的，这里我们要说下内存。 内存图解当我们开机的时候，电脑会把系统从硬盘里面读取到内存中，这里操作系统要占用若干内存，一般是512M，具体要看系统大小。开机之后，我们使用浏览器，大概会占用1G内存，这1G里面有分给每个网页100M，网页里面又有HTML+CSS、JS、网络 HTTP、其他（插件、定时器）来占用这100M 当我们在js里面">
@@ -315,7 +315,7 @@
       
         <h2 id="内存图解与Object类型转换"><a href="#内存图解与Object类型转换" class="headerlink" title="内存图解与Object类型转换"></a>内存图解与Object类型转换</h2><p>对象跟基本类型的存储方式是有所差异的，这里我们要说下内存。</p>
 <h3 id="内存图解"><a href="#内存图解" class="headerlink" title="内存图解"></a>内存图解</h3><p>当我们开机的时候，电脑会把系统从硬盘里面读取到内存中，这里操作系统要占用若干内存，一般是512M，具体要看系统大小。<br>开机之后，我们使用浏览器，大概会占用1G内存，这1G里面有分给每个网页100M，网页里面又有HTML+CSS、JS、网络 HTTP、其他（插件、定时器）来占用这100M<br><img src="http://i2.tiimg.com/644982/04a09b2422ceac00.png" alt="Markdown" title="内存分配图"></p>
-<p>当我们在js里面声明一个变量等于1时，内存会进行分区，分为代码区和数据区。代码区用来存代码。数据区是用来放你声明了一个数字，字符串，对象的地方，但是数据区又分为堆(heap)和栈(stack)<br><img src="http://i2.tiimg.com/644982/8eba28bcf46160be.png" alt="Markdown" title="内存分区"><br>注意：<br>当你声明了一个变量，浏览器首先做的是变量提升，如果它是数字，它就会以64位浮点数的方式存储在栈中。当我们有两个变量，分别是a(1)和b(2)，我们把a赋给b，在栈中，是直接把a所在的栈，覆盖掉b所在栈的。<br><img src="http://i2.tiimg.com/644982/08aa51a638227366.png" alt="Markdown"></p>
+<p>当我们在js里面声明一个变量等于<code>1</code>时，内存会进行分区，分为代码区和数据区。代码区用来存代码。数据区是用来放你声明了一个数字，字符串，对象的地方，但是数据区又分为堆(heap)和栈(stack)<br><img src="http://i2.tiimg.com/644982/8eba28bcf46160be.png" alt="Markdown" title="内存分区"><br>注意：<br>当你声明了一个变量，浏览器首先做的是变量提升，如果它是数字，它就会以64位浮点数的方式存储在栈中。当我们有两个变量，分别是<code>a(1)</code>和<code>b(2</code>)，我们把<code>a</code>赋给<code>b</code>，在栈中，是直接把<code>a</code>所在的栈，覆盖掉<code>b</code>所在栈的。<br><img src="http://i2.tiimg.com/644982/08aa51a638227366.png" alt="Markdown"></p>
 <p>接着我们来存对象，js在存储数据时，每个字符是16位，而一个栈每一行能存64位，也就是说一行能存4个字符.<br><img src="http://i2.tiimg.com/644982/aadcdd3e90df69f4.png" alt="Markdown"><br>对象的赋值是按照堆所对应的地址来存储的，如果要让一个对象赋值给另一个对象，这种情况是直接改变被对象在栈中的地址，然后指向它。后续的添加值则是在对象指向的堆中添加。<br><img src="http://i2.tiimg.com/644982/128ce7d846446452.png" alt="Markdown"></p>
 <h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><p>上面说了对象的赋值是按照堆所对应的地址来存储的，这种关系就叫引用。<br>如<code>object</code>存了<code>{&#39;name&#39;:&#39;Gene&#39;}</code>对象，那我们就说object是对象的引用。</p>
 <h3 id="各个类型转Object（包装对象）"><a href="#各个类型转Object（包装对象）" class="headerlink" title="各个类型转Object（包装对象）"></a>各个类型转Object（包装对象）</h3><blockquote>
@@ -341,7 +341,7 @@
 </blockquote>
 <p>下面是一个垃圾回收的简单例子<br><img src="http://i2.tiimg.com/644982/64ffa4db8fabbc66.png" alt="Markdown"></p>
 <p>垃圾回收经典面试题<br><img src="http://i2.tiimg.com/644982/fab11e71e10d0a5b.png" alt="Markdown"></p>
-<h3 id="浅拷贝和深拷贝"><a href="#浅拷贝和深拷贝" class="headerlink" title="浅拷贝和深拷贝"></a>浅拷贝和深拷贝</h3><p><strong>浅拷贝</strong><br><img src="http://i2.tiimg.com/644982/2379dc73254a1124.png" alt="Markdown"><br>上面<code>b</code>变至<code>a</code>变，我们称为浅拷贝</p>
+<h3 id="浅拷贝和深拷贝"><a href="#浅拷贝和深拷贝" class="headerlink" title="浅拷贝和深拷贝"></a>浅拷贝和深拷贝</h3><p><strong>浅拷贝</strong><br><img src="http://i2.tiimg.com/644982/fc50ceb13088df19.png" alt="Markdown"><br>上面<code>b</code>变至<code>a</code>变，我们称为浅拷贝</p>
 
       
     </div>
@@ -375,6 +375,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/09/03/原型对象/" rel="prev" title="全局对象和原型对象">
+                全局对象和原型对象 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -451,7 +455,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

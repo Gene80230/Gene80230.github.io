@@ -229,6 +229,151 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/03/原型对象/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Gene">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Gene’s Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/09/03/原型对象/" itemprop="url">全局对象和原型对象</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-03T23:36:32+08:00">
+                2019-09-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="全局对象-window"><a href="#全局对象-window" class="headerlink" title="全局对象 window"></a>全局对象 window</h2><p><code>ECMAScript</code> 规定全局对象叫做 <code>global</code>，但是浏览器把<code>window</code> 作为全局对象，但毕竟是浏览器先存在的，于是就沿用至今。<br><code>window</code> 就是一个哈希表，有很多属性。<br><code>window</code> 的属性就是全局变量，这些全局变量分为两种：</p>
+<ol>
+<li><p>一种是 ECMAScript 规定的</p>
+<ul>
+<li>global.parseInt</li>
+<li>global.parseFloat</li>
+<li>global.Number</li>
+<li>global.String</li>
+<li>global.Boolean</li>
+<li>global.Object</li>
+</ul>
+</li>
+<li><p>一种是浏览器私有的</p>
+<ul>
+<li>window.alert</li>
+<li>window.prompt</li>
+<li>window.comfirm</li>
+<li>window.console.log</li>
+<li>window.console.dir</li>
+<li>window.document</li>
+<li>window.document.createElement</li>
+<li>window.document.getElementById</li>
+</ul>
+</li>
+</ol>
+<p>今天我们只学习全局对象<code>Window</code>。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/29/对象转换和内存图解/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -302,7 +447,7 @@
           
             <h2 id="内存图解与Object类型转换"><a href="#内存图解与Object类型转换" class="headerlink" title="内存图解与Object类型转换"></a>内存图解与Object类型转换</h2><p>对象跟基本类型的存储方式是有所差异的，这里我们要说下内存。</p>
 <h3 id="内存图解"><a href="#内存图解" class="headerlink" title="内存图解"></a>内存图解</h3><p>当我们开机的时候，电脑会把系统从硬盘里面读取到内存中，这里操作系统要占用若干内存，一般是512M，具体要看系统大小。<br>开机之后，我们使用浏览器，大概会占用1G内存，这1G里面有分给每个网页100M，网页里面又有HTML+CSS、JS、网络 HTTP、其他（插件、定时器）来占用这100M<br><img src="http://i2.tiimg.com/644982/04a09b2422ceac00.png" alt="Markdown" title="内存分配图"></p>
-<p>当我们在js里面声明一个变量等于1时，内存会进行分区，分为代码区和数据区。代码区用来存代码。数据区是用来放你声明了一个数字，字符串，对象的地方，但是数据区又分为堆(heap)和栈(stack)<br><img src="http://i2.tiimg.com/644982/8eba28bcf46160be.png" alt="Markdown" title="内存分区"><br>注意：<br>当你声明了一个变量，浏览器首先做的是变量提升，如果它是数字，它就会以64位浮点数的方式存储在栈中。当我们有两个变量，分别是a(1)和b(2)，我们把a赋给b，在栈中，是直接把a所在的栈，覆盖掉b所在栈的。<br><img src="http://i2.tiimg.com/644982/08aa51a638227366.png" alt="Markdown"></p>
+<p>当我们在js里面声明一个变量等于<code>1</code>时，内存会进行分区，分为代码区和数据区。代码区用来存代码。数据区是用来放你声明了一个数字，字符串，对象的地方，但是数据区又分为堆(heap)和栈(stack)<br><img src="http://i2.tiimg.com/644982/8eba28bcf46160be.png" alt="Markdown" title="内存分区"><br>注意：<br>当你声明了一个变量，浏览器首先做的是变量提升，如果它是数字，它就会以64位浮点数的方式存储在栈中。当我们有两个变量，分别是<code>a(1)</code>和<code>b(2</code>)，我们把<code>a</code>赋给<code>b</code>，在栈中，是直接把<code>a</code>所在的栈，覆盖掉<code>b</code>所在栈的。<br><img src="http://i2.tiimg.com/644982/08aa51a638227366.png" alt="Markdown"></p>
 <p>接着我们来存对象，js在存储数据时，每个字符是16位，而一个栈每一行能存64位，也就是说一行能存4个字符.<br><img src="http://i2.tiimg.com/644982/aadcdd3e90df69f4.png" alt="Markdown"><br>对象的赋值是按照堆所对应的地址来存储的，如果要让一个对象赋值给另一个对象，这种情况是直接改变被对象在栈中的地址，然后指向它。后续的添加值则是在对象指向的堆中添加。<br><img src="http://i2.tiimg.com/644982/128ce7d846446452.png" alt="Markdown"></p>
 <h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><p>上面说了对象的赋值是按照堆所对应的地址来存储的，这种关系就叫引用。<br>如<code>object</code>存了<code>{&#39;name&#39;:&#39;Gene&#39;}</code>对象，那我们就说object是对象的引用。</p>
 <h3 id="各个类型转Object（包装对象）"><a href="#各个类型转Object（包装对象）" class="headerlink" title="各个类型转Object（包装对象）"></a>各个类型转Object（包装对象）</h3><blockquote>
@@ -328,7 +473,7 @@
 </blockquote>
 <p>下面是一个垃圾回收的简单例子<br><img src="http://i2.tiimg.com/644982/64ffa4db8fabbc66.png" alt="Markdown"></p>
 <p>垃圾回收经典面试题<br><img src="http://i2.tiimg.com/644982/fab11e71e10d0a5b.png" alt="Markdown"></p>
-<h3 id="浅拷贝和深拷贝"><a href="#浅拷贝和深拷贝" class="headerlink" title="浅拷贝和深拷贝"></a>浅拷贝和深拷贝</h3><p><strong>浅拷贝</strong><br><img src="http://i2.tiimg.com/644982/2379dc73254a1124.png" alt="Markdown"><br>上面<code>b</code>变至<code>a</code>变，我们称为浅拷贝</p>
+<h3 id="浅拷贝和深拷贝"><a href="#浅拷贝和深拷贝" class="headerlink" title="浅拷贝和深拷贝"></a>浅拷贝和深拷贝</h3><p><strong>浅拷贝</strong><br><img src="http://i2.tiimg.com/644982/fc50ceb13088df19.png" alt="Markdown"><br>上面<code>b</code>变至<code>a</code>变，我们称为浅拷贝</p>
 
           
         
@@ -1827,141 +1972,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/16/test/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Gene">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Gene’s Notes">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/08/16/test/" itemprop="url">开博成功</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-16T11:22:31+08:00">
-                2019-08-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <br>
-&emsp;&emsp;折腾了一晚上，终于创建了hexo分支，其实这个博客是第二次重新上传的，之前是因为电脑重装了。在此感谢这位CSND用户提供的教程。
-<br>
-&emsp;&emsp;当然谢谢知乎上吴润大佬HEXO的搭建教程，非常的详细。
-<br>
-&emsp;&emsp;庆祝换肤成功，终于可以好好的写博客了,从昨天断断续续折腾到现在才把皮肤换好，刚开始把themes给替换成theme了却忘了看下面一行还有个theme想想真是一波三折，多谢了一位老兄的提醒才做完这件事，不然我的懒癌一犯可能这篇文章也不会出现在我的博客上。
-
-<ul>
-<li><p>吴润HEXO的搭建教程: <a href="https://zhuanlan.zhihu.com/p/26625249" target="_blank" rel="noopener">点此跳转</a></p>
-</li>
-<li><p>CSND 用户创建hexo分支教程： <a href="https://blog.csdn.net/white_idiot/article/details/80685990#commentBox" target="_blank" rel="noopener">点此跳转</a></p>
-</li>
-<li><p>皮肤地址： <a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">themes/next</a></p>
-</li>
-</ul>
-<p>打开<b>站点</b>的_config.yml配置文件，修改主题为next theme: next<br>打开<b>主题</b>的_config.yml配置文件，不是站点主题文件，找到Scheme Settings,next主题有三个样式，我用的是Pisces，你们可以自己试试看，选择你自己喜欢的样式（只需要把行首的#去除，#是注释），选择好后，再次部署网站，<code>hexo g</code>、<code>hexo d</code>查看效果。<br><br>也选择其他主题，按照上述过程即可实现。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2012,7 +2022,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
