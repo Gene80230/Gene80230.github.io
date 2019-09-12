@@ -300,7 +300,7 @@
       
         
           
-            <h2 id="全局对象-window"><a href="#全局对象-window" class="headerlink" title="全局对象 window"></a>全局对象 window</h2><p><code>ECMAScript</code> 规定全局对象叫做 <code>global</code>，但是浏览器把<code>window</code> 作为全局对象，但毕竟是浏览器先存在的，于是就沿用至今。<br><code>window</code> 就是一个哈希表，有很多属性。<br><code>window</code> 的属性就是全局变量，这些全局变量分为两种：</p>
+            <h2 id="全局对象-window"><a href="#全局对象-window" class="headerlink" title="全局对象 window"></a>全局对象 window</h2><p><code>ECMAScript</code> 规定全局对象叫做 <code>global</code>，但是浏览器默认把<code>window</code> 作为全局对象，毕竟是浏览器先存在的，于是就沿用至今。<br><code>window</code> 就是一个哈希表，有很多属性。<br><code>window</code> 的属性就是全局变量，这些全局变量分为两种：</p>
 <ol>
 <li><p>一种是 ECMAScript 规定的</p>
 <ul>
@@ -325,7 +325,31 @@
 </ul>
 </li>
 </ol>
-<p>今天我们只学习全局对象<code>Window</code>。</p>
+<p>我们暂时只学习全局对象<code>Window</code>。</p>
+<h2 id="公用属性-proto"><a href="#公用属性-proto" class="headerlink" title="公用属性(.proto)"></a>公用属性(.<strong>proto</strong>)</h2><p><a href="https://gene80230.github.io/2019/08/29/%E5%AF%B9%E8%B1%A1%E8%BD%AC%E6%8D%A2%E5%92%8C%E5%86%85%E5%AD%98%E5%9B%BE%E8%A7%A3/" target="_blank" rel="noopener">上一节</a>笔记我们讲到一个概念叫包装对象，大家也都明白了基本类型值的存储方式和对象的存储方式是不同的。基本类型是存储在栈(<code>stack</code>)中。而对象在声明的时候，地址存储在栈(<code>stack</code>)中，地址中的内容则是存储在堆(<code>Heap</code>)中。</p>
+<p>这里介绍两种它们共同具有、从Object对象继承的方法：<code>valueOf()</code>和<code>toString()</code>。<br><strong>valueOf()</strong></p>
+<p><code>valueOf()</code>方法返回包装对象实例对应的原始类型的值。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Number</span>(<span class="number">123</span>).valueOf()  <span class="comment">// 123</span></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">'abc'</span>).valueOf() <span class="comment">// "abc"</span></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Boolean</span>(<span class="literal">true</span>).valueOf() <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>toString()</strong></p>
+<p><code>toString()</code>方法返回对应的字符串形式。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Number</span>(<span class="number">123</span>).toString() <span class="comment">// "123"</span></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">'abc'</span>).toString() <span class="comment">// "abc"</span></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Boolean</span>(<span class="literal">true</span>).toString() <span class="comment">// "true"</span></span><br></pre></td></tr></table></figure>
+
+<p>所有对象都有<code>valueOf()</code>和<code>toString()</code>方法，那么我们是否有必要给每个对象一个<code>toString</code>和 <code>valueOf</code> 方法呢？明显不需要。<br><code>JavaScript</code>的做法是把<code>toString</code>和<code>valueOf</code>放在一个对象里（暂且叫做公用属性组成的对象）然后让每一个对象的 <strong>proto</strong> 指向这个「公用属性组成的对象」的地址。<br>这样，既可以节省内存，又不用频繁的去创造很多不必要的对象。</p>
+<p>一般js有两种情况可以调用原型对象。</p>
+<ul>
+<li>原始类型与实例对象的自动转换</li>
+<li>调用对象</li>
+</ul>
+<h3 id="原始类型与实例对象的自动转换"><a href="#原始类型与实例对象的自动转换" class="headerlink" title="原始类型与实例对象的自动转换"></a>原始类型与实例对象的自动转换</h3><p>我们先来声明一个字符串</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> n1 = <span class="string">'abc'</span></span><br><span class="line">n1.length   <span class="comment">//3</span></span><br></pre></td></tr></table></figure>
+
+<p>某些场合，原始类型的值会自动当作包装对象调用，即调用包装对象的属性和方法。这时，JavaScript 引擎会自动将原始类型的值转为包装对象实例，并在使用后立刻销毁实例。</p>
+<p>比如，字符串可以调用<code>length</code>属性，返回字符串的长度。</p>
+<p>上面代码中，<code>abc</code>是一个字符串，本身不是对象，不能调用<code>length</code>属性。JavaScript 引擎自动将其转为包装对象，在这个对象上调用<code>length</code>属性。调用结束后，这个临时对象就会被销毁。这就叫原始类型与实例对象的自动转换。</p>
+<p>自动转换生成的包装对象是只读的，无法修改。所以，字符串无法添加新属性。如果硬添加上去会返回<code>undefined</code>。</p>
+<p>另一方面，调用结束后，包装对象实例会自动销毁。这意味着，下一次调用字符串的属性时，实际是调用一个新生成的对象，而不是上一次调用时生成的那个对象，所以取不到赋值在上一个对象的属性。如果要为字符串添加属性，只有在它的原型对象<code>String.prototype</code>上定义。</p>
+<h3 id="调用对象"><a href="#调用对象" class="headerlink" title="调用对象"></a>调用对象</h3><p>还有一种情况是你声明的变量已经是一个对象了，但你调用<code>toString</code>函数并不是自身就拥有的，而是继承自<code>__proto__</code> ， 因为这样你才能调用<code>toString</code>函数。<br><img src="https://i.loli.net/2019/09/12/REWkX51wFuGH8Yi.png" alt="2019年9月12日18:25:58"></p>
 
           
         
@@ -447,7 +471,7 @@
           
             <h2 id="内存图解与Object类型转换"><a href="#内存图解与Object类型转换" class="headerlink" title="内存图解与Object类型转换"></a>内存图解与Object类型转换</h2><p>对象跟基本类型的存储方式是有所差异的，这里我们要说下内存。</p>
 <h3 id="内存图解"><a href="#内存图解" class="headerlink" title="内存图解"></a>内存图解</h3><p>当我们开机的时候，电脑会把系统从硬盘里面读取到内存中，这里操作系统要占用若干内存，一般是512M，具体要看系统大小。<br>开机之后，我们使用浏览器，大概会占用1G内存，这1G里面有分给每个网页100M，网页里面又有HTML+CSS、JS、网络 HTTP、其他（插件、定时器）来占用这100M<br><img src="http://i2.tiimg.com/644982/04a09b2422ceac00.png" alt="Markdown" title="内存分配图"></p>
-<p>当我们在js里面声明一个变量等于<code>1</code>时，内存会进行分区，分为代码区和数据区。代码区用来存代码。数据区是用来放你声明了一个数字，字符串，对象的地方，但是数据区又分为堆(heap)和栈(stack)<br><img src="http://i2.tiimg.com/644982/8eba28bcf46160be.png" alt="Markdown" title="内存分区"><br>注意：<br>当你声明了一个变量，浏览器首先做的是变量提升，如果它是数字，它就会以64位浮点数的方式存储在栈中。当我们有两个变量，分别是<code>a(1)</code>和<code>b(2</code>)，我们把<code>a</code>赋给<code>b</code>，在栈中，是直接把<code>a</code>所在的栈，覆盖掉<code>b</code>所在栈的。<br><img src="http://i2.tiimg.com/644982/08aa51a638227366.png" alt="Markdown"></p>
+<p>当我们在js里面声明一个变量等于<code>1</code>时，内存会进行分区，分为代码区和数据区。代码区用来存代码。数据区是用来放你声明了一个数字，字符串，对象的地方，但是数据区又分为堆(heap)和栈(stack)<br><img src="http://i2.tiimg.com/644982/8eba28bcf46160be.png" alt="Markdown" title="内存分区"><br>注意：<br>当你声明了一个变量，浏览器首先做的是变量提升，如果它是数字，它就会以64位浮点数的方式存储在栈中。当我们有两个变量，分别是<code>a(1)</code>和<code>b(2)</code>，我们把<code>a</code>赋给<code>b</code>，在栈中，是直接把<code>a</code>所在的栈，覆盖掉<code>b</code>所在栈的。<br><img src="http://i2.tiimg.com/644982/08aa51a638227366.png" alt="Markdown"></p>
 <p>接着我们来存对象，js在存储数据时，每个字符是16位，而一个栈每一行能存64位，也就是说一行能存4个字符.<br><img src="http://i2.tiimg.com/644982/aadcdd3e90df69f4.png" alt="Markdown"><br>对象的赋值是按照堆所对应的地址来存储的，如果要让一个对象赋值给另一个对象，这种情况是直接改变被对象在栈中的地址，然后指向它。后续的添加值则是在对象指向的堆中添加。<br><img src="http://i2.tiimg.com/644982/128ce7d846446452.png" alt="Markdown"></p>
 <h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><p>上面说了对象的赋值是按照堆所对应的地址来存储的，这种关系就叫引用。<br>如<code>object</code>存了<code>{&#39;name&#39;:&#39;Gene&#39;}</code>对象，那我们就说object是对象的引用。</p>
 <h3 id="各个类型转Object（包装对象）"><a href="#各个类型转Object（包装对象）" class="headerlink" title="各个类型转Object（包装对象）"></a>各个类型转Object（包装对象）</h3><blockquote>
@@ -1064,7 +1088,7 @@
 <h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>什么时候用到链表或者数组呢？</p>
 <ul>
 <li>当你不删除，或者只删除头尾的时候，我们可以用数组。</li>
-<li>如你经常从中间删除则用列表</li>
+<li>如你经常从中间删除则用链表</li>
 </ul>
 
           
