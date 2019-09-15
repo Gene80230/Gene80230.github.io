@@ -91,7 +91,7 @@
 <meta property="og:image" content="https://i.loli.net/2019/09/12/E4SClXZFfxcRLhA.png">
 <meta property="og:image" content="https://i.loli.net/2019/09/12/dpJbuWnhQo4aekI.png">
 <meta property="og:image" content="https://i.loli.net/2019/09/12/8dEnWMaXhNY4zT9.png">
-<meta property="og:updated_time" content="2019-09-15T14:55:24.148Z">
+<meta property="og:updated_time" content="2019-09-15T15:56:19.662Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="全局对象和原型对象">
 <meta name="twitter:description" content="全局对象 windowECMAScript 规定全局对象叫做 global，但是浏览器默认把window 作为全局对象，毕竟是浏览器先存在的，于是就沿用至今。window 就是一个哈希表，有很多属性。window 的属性就是全局变量，这些全局变量分为两种：  一种是 ECMAScript 规定的  global.parseInt global.parseFloat global.Number gl">
@@ -331,7 +331,7 @@
 </li>
 </ol>
 <p>我们暂时只学习全局对象<code>Window</code>。</p>
-<h2 id="公用属性-proto"><a href="#公用属性-proto" class="headerlink" title="公用属性(.proto)"></a>公用属性(.<strong>proto</strong>)</h2><p><a href="https://gene80230.github.io/2019/08/29/%E5%AF%B9%E8%B1%A1%E8%BD%AC%E6%8D%A2%E5%92%8C%E5%86%85%E5%AD%98%E5%9B%BE%E8%A7%A3/" target="_blank" rel="noopener">上一节</a>笔记我们讲到一个概念叫包装对象，大家也都明白了基本类型值的存储方式和对象的存储方式是不同的。基本类型是存储在栈(<code>stack</code>)中。而对象在声明的时候，地址存储在栈(<code>stack</code>)中，地址中的内容则是存储在堆(<code>Heap</code>)中。</p>
+<h2 id="公用属性-proto"><a href="#公用属性-proto" class="headerlink" title="公用属性(.__proto__)"></a>公用属性(<code>.__proto__</code>)</h2><p><a href="https://gene80230.github.io/2019/08/29/%E5%AF%B9%E8%B1%A1%E8%BD%AC%E6%8D%A2%E5%92%8C%E5%86%85%E5%AD%98%E5%9B%BE%E8%A7%A3/" target="_blank" rel="noopener">上一节</a>笔记我们讲到一个概念叫包装对象，大家也都明白了基本类型值的存储方式和对象的存储方式是不同的。基本类型是存储在栈(<code>stack</code>)中。而对象在声明的时候，地址存储在栈(<code>stack</code>)中，地址中的内容则是存储在堆(<code>Heap</code>)中。</p>
 <p>这里介绍两种它们共同具有、从Object对象继承的方法：<code>valueOf()</code>和<code>toString()</code>。<br><strong>valueOf()</strong></p>
 <p><code>valueOf()</code>方法返回包装对象实例对应的原始类型的值。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Number</span>(<span class="number">123</span>).valueOf()  <span class="comment">// 123</span></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">'abc'</span>).valueOf() <span class="comment">// "abc"</span></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Boolean</span>(<span class="literal">true</span>).valueOf() <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
@@ -524,7 +524,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#全局对象-window"><span class="nav-number">1.</span> <span class="nav-text">全局对象 window</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#公用属性-proto"><span class="nav-number">2.</span> <span class="nav-text">公用属性(.proto)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#原始类型与实例对象的自动转换"><span class="nav-number">2.1.</span> <span class="nav-text">原始类型与实例对象的自动转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#调用对象"><span class="nav-number">2.2.</span> <span class="nav-text">调用对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#各个-proto-与-prototype的关系："><span class="nav-number">2.3.</span> <span class="nav-text">各个.__proto__与.prototype的关系：</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#全局对象-window"><span class="nav-number">1.</span> <span class="nav-text">全局对象 window</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#公用属性-proto"><span class="nav-number">2.</span> <span class="nav-text">公用属性(.__proto__)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#原始类型与实例对象的自动转换"><span class="nav-number">2.1.</span> <span class="nav-text">原始类型与实例对象的自动转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#调用对象"><span class="nav-number">2.2.</span> <span class="nav-text">调用对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#各个-proto-与-prototype的关系："><span class="nav-number">2.3.</span> <span class="nav-text">各个.__proto__与.prototype的关系：</span></a></li></ol></li></ol></div>
             
 
           </div>
