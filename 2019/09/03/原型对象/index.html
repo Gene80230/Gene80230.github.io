@@ -86,12 +86,16 @@
 <meta property="og:site_name" content="Gene’s Notes">
 <meta property="og:description" content="全局对象 windowECMAScript 规定全局对象叫做 global，但是浏览器默认把window 作为全局对象，毕竟是浏览器先存在的，于是就沿用至今。window 就是一个哈希表，有很多属性。window 的属性就是全局变量，这些全局变量分为两种：  一种是 ECMAScript 规定的  global.parseInt global.parseFloat global.Number gl">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://i.loli.net/2019/09/12/REWkX51wFuGH8Yi.png">
-<meta property="og:updated_time" content="2019-09-12T10:26:29.071Z">
+<meta property="og:image" content="https://i.loli.net/2019/09/12/9D2xw1o3mCqzPJT.png">
+<meta property="og:image" content="https://i.loli.net/2019/09/12/7PzmCDRLM6QrI1S.png">
+<meta property="og:image" content="https://i.loli.net/2019/09/12/E4SClXZFfxcRLhA.png">
+<meta property="og:image" content="https://i.loli.net/2019/09/12/dpJbuWnhQo4aekI.png">
+<meta property="og:image" content="https://i.loli.net/2019/09/12/8dEnWMaXhNY4zT9.png">
+<meta property="og:updated_time" content="2019-09-15T14:55:24.148Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="全局对象和原型对象">
 <meta name="twitter:description" content="全局对象 windowECMAScript 规定全局对象叫做 global，但是浏览器默认把window 作为全局对象，毕竟是浏览器先存在的，于是就沿用至今。window 就是一个哈希表，有很多属性。window 的属性就是全局变量，这些全局变量分为两种：  一种是 ECMAScript 规定的  global.parseInt global.parseFloat global.Number gl">
-<meta name="twitter:image" content="https://i.loli.net/2019/09/12/REWkX51wFuGH8Yi.png">
+<meta name="twitter:image" content="https://i.loli.net/2019/09/12/9D2xw1o3mCqzPJT.png">
 
 
 
@@ -347,10 +351,29 @@
 
 <p>某些场合，原始类型的值会自动当作包装对象调用，即调用包装对象的属性和方法。这时，JavaScript 引擎会自动将原始类型的值转为包装对象实例，并在使用后立刻销毁实例。</p>
 <p>比如，字符串可以调用<code>length</code>属性，返回字符串的长度。</p>
-<p>上面代码中，<code>abc</code>是一个字符串，本身不是对象，不能调用<code>length</code>属性。JavaScript 引擎自动将其转为包装对象，在这个对象上调用<code>length</code>属性。调用结束后，这个临时对象就会被销毁。这就叫原始类型与实例对象的自动转换。</p>
+<p>上面代码中，<code>n1</code>是一个字符串，本身不是对象，不能调用<code>length</code>属性。JavaScript 引擎自动将其转为包装对象，在这个对象上调用<code>length</code>属性。调用结束后，这个临时对象就会被销毁。这就叫原始类型与实例对象的自动转换。</p>
 <p>自动转换生成的包装对象是只读的，无法修改。所以，字符串无法添加新属性。如果硬添加上去会返回<code>undefined</code>。</p>
 <p>另一方面，调用结束后，包装对象实例会自动销毁。这意味着，下一次调用字符串的属性时，实际是调用一个新生成的对象，而不是上一次调用时生成的那个对象，所以取不到赋值在上一个对象的属性。如果要为字符串添加属性，只有在它的原型对象<code>String.prototype</code>上定义。</p>
-<h3 id="调用对象"><a href="#调用对象" class="headerlink" title="调用对象"></a>调用对象</h3><p>还有一种情况是你声明的变量已经是一个对象了，但你调用<code>toString</code>函数并不是自身就拥有的，而是继承自<code>__proto__</code> ， 因为这样你才能调用<code>toString</code>函数。<br><img src="https://i.loli.net/2019/09/12/REWkX51wFuGH8Yi.png" alt="2019年9月12日18:25:58"></p>
+<h3 id="调用对象"><a href="#调用对象" class="headerlink" title="调用对象"></a>调用对象</h3><p>还有一种情况是你声明的变量已经是一个对象了，但你调用<code>toString</code>函数并不是自身就拥有的，而是继承自<code>__proto__</code> ， 因为这样你才能调用<code>toString</code>函数。<br><img src="https://i.loli.net/2019/09/12/9D2xw1o3mCqzPJT.png" alt="18:31:51"><br>基本类型的构造函数已经自定义了对应自身的toString方法，这个方法跟对象的toString方法是不一样的<br>具体引用关系如下图：<br><img src="https://i.loli.net/2019/09/12/7PzmCDRLM6QrI1S.png" alt="18:32:40"><br><img src="https://i.loli.net/2019/09/12/E4SClXZFfxcRLhA.png" alt="18:33:00"><br>当我们不写代码的时候，内存中有全局对象Window，对象中有Number、Object、String、Boolean 这几个函数<br><img src="https://i.loli.net/2019/09/12/dpJbuWnhQo4aekI.png" alt="18:34:37"><br>当你写代码的时候<br><img src="https://i.loli.net/2019/09/12/8dEnWMaXhNY4zT9.png" alt="18:34:33"></p>
+<h3 id="各个-proto-与-prototype的关系："><a href="#各个-proto-与-prototype的关系：" class="headerlink" title="各个.__proto__与.prototype的关系："></a>各个<code>.__proto__</code>与<code>.prototype</code>的关系：</h3><p>基本类型的构造函数遵循这样的规则：对象.<strong>proto</strong> 指向构造函数.prototype</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> n = <span class="keyword">new</span> <span class="built_in">Number</span>(<span class="number">2</span>)</span><br><span class="line">n.__proto__ === <span class="built_in">Number</span>.prototype</span><br><span class="line"><span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+
+<p>又因为<code>Number.prototype</code>作为一个对象，它指向了<code>Object.prototype</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Number</span>.prototype.__proto__ === <span class="built_in">Object</span>.prototype</span><br><span class="line"><span class="comment">//true</span></span><br><span class="line"><span class="comment">//根据上面这条我们可以推出下面这条</span></span><br><span class="line">n.__proto__.__proto__ === <span class="built_in">Object</span>.prototype</span><br><span class="line"><span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+
+<p>接下来是<code>Object</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> object = <span class="keyword">new</span> <span class="built_in">Object</span>()</span><br><span class="line">object.__proto__ === <span class="built_in">Object</span>.prototype</span><br><span class="line"><span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+
+<p>而<code>Object</code>作为一个函数，它是<code>Function</code>构造出来的，它的<code>.__proto__</code>指向了<code>Function.prototype</code>。<br>另外需要说明下，所有的函数都是<code>Function</code>构造出来的，它们也都一样指向了<code>Function.prototype</code>。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.__proto__ === <span class="built_in">Function</span>.prototype</span><br><span class="line"><span class="comment">//true</span></span><br><span class="line"><span class="built_in">Number</span>.__proto__ === <span class="built_in">Function</span>.prototype</span><br><span class="line"><span class="comment">//true  其他构造函数是一样的指向</span></span><br></pre></td></tr></table></figure>
+
+<p>但<code>Function</code>因为自身是实例，也是构造函数，它的原型对象就是自身。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.__proto__ === <span class="built_in">Function</span>.prototype</span><br><span class="line"><span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+
+<p>比较特殊的是，<code>Object.prototype</code>自身作为对象也是有<code>.__proto__</code>的，但是它却指向了<code>null</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.prototype.__proto__ === <span class="literal">null</span></span><br></pre></td></tr></table></figure>
+
+<p>所以我们今天的知识总结称为一句话，大概就是：<br><strong>对象.<strong>proto</strong> === 构造函数.prototype</strong></p>
 
       
     </div>
@@ -384,6 +407,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/09/15/数组和伪数组/" rel="prev" title="数组和伪数组">
+                数组和伪数组 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -460,7 +487,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -497,7 +524,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#全局对象-window"><span class="nav-number">1.</span> <span class="nav-text">全局对象 window</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#公用属性-proto"><span class="nav-number">2.</span> <span class="nav-text">公用属性(.proto)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#原始类型与实例对象的自动转换"><span class="nav-number">2.1.</span> <span class="nav-text">原始类型与实例对象的自动转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#调用对象"><span class="nav-number">2.2.</span> <span class="nav-text">调用对象</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#全局对象-window"><span class="nav-number">1.</span> <span class="nav-text">全局对象 window</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#公用属性-proto"><span class="nav-number">2.</span> <span class="nav-text">公用属性(.proto)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#原始类型与实例对象的自动转换"><span class="nav-number">2.1.</span> <span class="nav-text">原始类型与实例对象的自动转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#调用对象"><span class="nav-number">2.2.</span> <span class="nav-text">调用对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#各个-proto-与-prototype的关系："><span class="nav-number">2.3.</span> <span class="nav-text">各个.__proto__与.prototype的关系：</span></a></li></ol></li></ol></div>
             
 
           </div>
