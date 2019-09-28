@@ -91,7 +91,7 @@
 <meta property="og:image" content="https://i.loli.net/2019/09/12/E4SClXZFfxcRLhA.png">
 <meta property="og:image" content="https://i.loli.net/2019/09/12/dpJbuWnhQo4aekI.png">
 <meta property="og:image" content="https://i.loli.net/2019/09/12/8dEnWMaXhNY4zT9.png">
-<meta property="og:updated_time" content="2019-09-15T15:56:19.662Z">
+<meta property="og:updated_time" content="2019-09-28T13:54:09.369Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="全局对象和原型对象">
 <meta name="twitter:description" content="全局对象 windowECMAScript 规定全局对象叫做 global，但是浏览器默认把window 作为全局对象，毕竟是浏览器先存在的，于是就沿用至今。window 就是一个哈希表，有很多属性。window 的属性就是全局变量，这些全局变量分为两种：  一种是 ECMAScript 规定的  global.parseInt global.parseFloat global.Number gl">
@@ -373,7 +373,9 @@
 <p>比较特殊的是，<code>Object.prototype</code>自身作为对象也是有<code>.__proto__</code>的，但是它却指向了<code>null</code></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.prototype.__proto__ === <span class="literal">null</span></span><br></pre></td></tr></table></figure>
 
-<p>所以我们今天的知识总结称为一句话，大概就是：<br><strong>对象.<strong>proto</strong> === 构造函数.prototype</strong></p>
+<p>所以我们今天的知识总结称为一句话，大概就是：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">对象.__proto__ === 构造函数.prototype</span><br></pre></td></tr></table></figure>
+
 
       
     </div>

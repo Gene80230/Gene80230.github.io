@@ -79,14 +79,17 @@
 
 
 
+<meta name="description" content="数组基本概念什么是数组？数组（array）是按次序排列的一组值。每个值的位置都有编号（从0开始），整个数组用方括号表示。 1234567var arr = [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;];//也可以像下面这样先定义后赋值。var arr = [];arr[0] = &apos;a&apos;;arr[1] = &apos;b&apos;;arr[2] = &apos;c&apos;;  上面代码中的a、b、c就构成一个数组，两端的方括号是数组的标志。a是0">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数组和伪数组">
 <meta property="og:url" content="http://yoursite.com/2019/09/15/数组和伪数组/index.html">
 <meta property="og:site_name" content="Gene’s Notes">
+<meta property="og:description" content="数组基本概念什么是数组？数组（array）是按次序排列的一组值。每个值的位置都有编号（从0开始），整个数组用方括号表示。 1234567var arr = [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;];//也可以像下面这样先定义后赋值。var arr = [];arr[0] = &apos;a&apos;;arr[1] = &apos;b&apos;;arr[2] = &apos;c&apos;;  上面代码中的a、b、c就构成一个数组，两端的方括号是数组的标志。a是0">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-15T14:47:57.368Z">
+<meta property="og:updated_time" content="2019-09-28T14:10:36.659Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数组和伪数组">
+<meta name="twitter:description" content="数组基本概念什么是数组？数组（array）是按次序排列的一组值。每个值的位置都有编号（从0开始），整个数组用方括号表示。 1234567var arr = [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;];//也可以像下面这样先定义后赋值。var arr = [];arr[0] = &apos;a&apos;;arr[1] = &apos;b&apos;;arr[2] = &apos;c&apos;;  上面代码中的a、b、c就构成一个数组，两端的方括号是数组的标志。a是0">
 
 
 
@@ -296,7 +299,28 @@
       
 
       
-        
+        <h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><p><strong>什么是数组？</strong><br>数组（array）是按次序排列的一组值。每个值的位置都有编号（从0开始），整个数组用方括号表示。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>];</span><br><span class="line"><span class="comment">//也可以像下面这样先定义后赋值。</span></span><br><span class="line"><span class="keyword">var</span> arr = [];</span><br><span class="line"></span><br><span class="line">arr[<span class="number">0</span>] = <span class="string">'a'</span>;</span><br><span class="line">arr[<span class="number">1</span>] = <span class="string">'b'</span>;</span><br><span class="line">arr[<span class="number">2</span>] = <span class="string">'c'</span>;</span><br></pre></td></tr></table></figure>
+
+<p>上面代码中的<code>a</code>、<code>b</code>、<code>c</code>就构成一个数组，两端的方括号是数组的标志。<code>a</code>是0号位置，<code>b</code>是1号位置，<code>c</code>是2号位置。<br>任何类型的数据，都可以放入数组。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [</span><br><span class="line">  &#123;<span class="attr">a</span>: <span class="number">1</span>&#125;,</span><br><span class="line">  [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>],</span><br><span class="line">  <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;<span class="keyword">return</span> <span class="literal">true</span>;&#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">arr[<span class="number">0</span>] <span class="comment">// Object &#123;a: 1&#125;</span></span><br><span class="line">arr[<span class="number">1</span>] <span class="comment">// [1, 2, 3]</span></span><br><span class="line">arr[<span class="number">2</span>] <span class="comment">// function ()&#123;return true;&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>上面数组arr的3个成员依次是对象、数组、函数。</p>
+<h3 id="数组的本质"><a href="#数组的本质" class="headerlink" title="数组的本质"></a>数组的本质</h3><p>本质上，数组属于一种特殊的对象。<code>typeof</code>运算符会返回数组的类型是<code>object</code>。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>] <span class="comment">// "object"</span></span><br></pre></td></tr></table></figure>
+
+<p>数组的特殊性体现在，它的键名是按次序排列的一组整数（0，1，2…）。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>];</span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.keys(arr)</span><br><span class="line"><span class="comment">// ["0", "1", "2"]</span></span><br></pre></td></tr></table></figure>
+
+<p>上面代码中，<code>Object.keys</code>方法返回数组的所有键名。可以看到数组的键名就是整数0、1、2。(其实是字符串)之所以可以用数值读取，是因为非字符串的键名会被转为字符串。<br>由于数组成员的键名是固定的（默认总是0、1、2…），因此数组不用为每个元素指定键名，而对象的每个成员都必须指定键名。<br>数组成员只能用方括号<code>arr[0]</code>表示（方括号是运算符，可以接受数值）。</p>
+<h3 id="length-属性"><a href="#length-属性" class="headerlink" title="length 属性"></a>length 属性</h3><p>只要是数组，就一定有<code>length</code>属性。该属性是一个动态的值，等于键名中的最大整数加上1。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">'a'</span>, <span class="string">'b'</span>];</span><br><span class="line">arr.length <span class="comment">// 2</span></span><br><span class="line"></span><br><span class="line">arr[<span class="number">2</span>] = <span class="string">'c'</span>;</span><br><span class="line">arr.length <span class="comment">// 3</span></span><br><span class="line"></span><br><span class="line">arr[<span class="number">9</span>] = <span class="string">'d'</span>;</span><br><span class="line">arr.length <span class="comment">// 10</span></span><br><span class="line"></span><br><span class="line">arr[<span class="number">1000</span>] = <span class="string">'e'</span>;</span><br><span class="line">arr.length <span class="comment">// 1001</span></span><br></pre></td></tr></table></figure>
+
+<p>数组是一种动态的数据结构，可以随时增减数组的成员。<br><code>length</code>属性是可写的。如果人为设置一个小于当前成员个数的值，该数组的成员会自动减少到<code>length</code>设置的值。在数组中多出来的成员，会被自动删除了。<br>清空数组的一个有效方法，就是将<code>length</code>属性设为0。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [ <span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span> ];</span><br><span class="line"></span><br><span class="line">arr.length = <span class="number">0</span>;</span><br><span class="line">arr <span class="comment">// []</span></span><br></pre></td></tr></table></figure>
+
+<p>如果人为设置<code>length</code>大于当前元素个数，则数组的成员数量会增加到这个值，新增的位置都是空位。读取新增的位置都会返回<code>undefined</code>。<br>如果人为设置<code>length</code>为不合法的值，JavaScript 会报错。</p>
+
       
     </div>
     
@@ -380,8 +404,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -423,6 +456,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数组"><span class="nav-number">1.</span> <span class="nav-text">数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本概念"><span class="nav-number">1.1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组的本质"><span class="nav-number">1.2.</span> <span class="nav-text">数组的本质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#length-属性"><span class="nav-number">1.3.</span> <span class="nav-text">length 属性</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
