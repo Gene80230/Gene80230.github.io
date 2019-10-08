@@ -91,7 +91,7 @@
 <meta property="og:image" content="https://i.loli.net/2019/09/12/E4SClXZFfxcRLhA.png">
 <meta property="og:image" content="https://i.loli.net/2019/09/12/dpJbuWnhQo4aekI.png">
 <meta property="og:image" content="https://i.loli.net/2019/09/12/8dEnWMaXhNY4zT9.png">
-<meta property="og:updated_time" content="2019-10-04T06:58:29.275Z">
+<meta property="og:updated_time" content="2019-10-08T10:35:22.050Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="全局对象和原型对象">
 <meta name="twitter:description" content="全局对象 windowECMAScript 规定全局对象叫做 global，但是浏览器默认把window 作为全局对象，毕竟是浏览器先存在的，于是就沿用至今。window 就是一个哈希表，有很多属性。window 的属性就是全局变量，这些全局变量分为两种：  一种是 ECMAScript 规定的  global.parseInt global.parseFloat global.Number gl">
@@ -340,7 +340,7 @@
 <p><code>toString()</code>方法返回对应的字符串形式。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Number</span>(<span class="number">123</span>).toString() <span class="comment">// "123"</span></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">'abc'</span>).toString() <span class="comment">// "abc"</span></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Boolean</span>(<span class="literal">true</span>).toString() <span class="comment">// "true"</span></span><br></pre></td></tr></table></figure>
 
-<p>所有对象都有<code>valueOf()</code>和<code>toString()</code>方法，那么我们是否有必要给每个对象一个<code>toString</code>和 <code>valueOf</code> 方法呢？明显不需要。<br><code>JavaScript</code>的做法是把<code>toString</code>和<code>valueOf</code>放在一个对象里（暂且叫做公用属性组成的对象）然后让每一个对象的 <strong>proto</strong> 指向这个「公用属性组成的对象」的地址。<br>这样，既可以节省内存，又不用频繁的去创造很多不必要的对象。</p>
+<p>所有对象都有<code>valueOf()</code>和<code>toString()</code>方法，那么我们是否有必要给每个对象一个<code>toString</code>和 <code>valueOf</code> 方法呢？明显不需要。<br>JavaScript的做法是把<code>toString</code>和<code>valueOf</code>放在一个对象里（暂且叫做公用属性组成的对象）然后让每一个对象的 <strong>proto</strong> 指向这个「公用属性组成的对象」的地址。<br>这样，既可以节省内存，又不用频繁的去创造很多不必要的对象。</p>
 <p>一般js有两种情况可以调用原型对象。</p>
 <ul>
 <li>原始类型与实例对象的自动转换</li>
@@ -355,7 +355,7 @@
 <p>自动转换生成的包装对象是只读的，无法修改。所以，字符串无法添加新属性。如果硬添加上去会返回<code>undefined</code>。</p>
 <p>另一方面，调用结束后，包装对象实例会自动销毁。这意味着，下一次调用字符串的属性时，实际是调用一个新生成的对象，而不是上一次调用时生成的那个对象，所以取不到赋值在上一个对象的属性。如果要为字符串添加属性，只有在它的原型对象<code>String.prototype</code>上定义。</p>
 <h3 id="调用对象"><a href="#调用对象" class="headerlink" title="调用对象"></a>调用对象</h3><p>还有一种情况是你声明的变量已经是一个对象了，但你调用<code>toString</code>函数并不是自身就拥有的，而是继承自<code>__proto__</code> ， 因为这样你才能调用<code>toString</code>函数。<br><img src="https://i.loli.net/2019/09/12/9D2xw1o3mCqzPJT.png" alt="18:31:51"><br>基本类型的构造函数已经自定义了对应自身的toString方法，这个方法跟对象的toString方法是不一样的<br>具体引用关系如下图：<br><img src="https://i.loli.net/2019/09/12/7PzmCDRLM6QrI1S.png" alt="18:32:40"><br><img src="https://i.loli.net/2019/09/12/E4SClXZFfxcRLhA.png" alt="18:33:00"><br>当我们不写代码的时候，内存中有全局对象Window，对象中有Number、Object、String、Boolean 这几个函数<br><img src="https://i.loli.net/2019/09/12/dpJbuWnhQo4aekI.png" alt="18:34:37"><br>当你写代码的时候<br><img src="https://i.loli.net/2019/09/12/8dEnWMaXhNY4zT9.png" alt="18:34:33"></p>
-<h3 id="各个-proto-与-prototype的关系："><a href="#各个-proto-与-prototype的关系：" class="headerlink" title="各个.__proto__与.prototype的关系："></a>各个<code>.__proto__</code>与<code>.prototype</code>的关系：</h3><p>基本类型的构造函数遵循这样的规则：对象.<strong>proto</strong> 指向构造函数.prototype</p>
+<h3 id="各个-proto-与-prototype的关系："><a href="#各个-proto-与-prototype的关系：" class="headerlink" title="各个.__proto__与.prototype的关系："></a>各个<code>.__proto__</code>与<code>.prototype</code>的关系：</h3><p>基本类型的构造函数遵循这样的规则：对象<code>.__proto__</code> 指向构造函数<code>.prototype</code></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> n = <span class="keyword">new</span> <span class="built_in">Number</span>(<span class="number">2</span>)</span><br><span class="line">n.__proto__ === <span class="built_in">Number</span>.prototype</span><br><span class="line"><span class="comment">//true</span></span><br></pre></td></tr></table></figure>
 
 <p>又因为<code>Number.prototype</code>作为一个对象，它指向了<code>Object.prototype</code></p>
@@ -489,7 +489,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

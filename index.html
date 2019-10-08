@@ -229,6 +229,169 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/08/12.数组对象/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Gene">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Gene’s Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/10/08/12.数组对象/" itemprop="url">数组对象</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-08T23:37:18+08:00">
+                2019-10-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Array-对象"><a href="#Array-对象" class="headerlink" title="Array 对象"></a>Array 对象</h2><p>上一篇我们说的是数组的基础知识，这一次我们来看看数组对象。</p>
+<h3 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h3><p><code>Array</code>是一个构造函数，可以用它生成新的数组。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">2</span>);</span><br><span class="line">arr.length <span class="comment">// 2</span></span><br><span class="line">arr <span class="comment">// [ empty x 2 ] 生成两个空值</span></span><br></pre></td></tr></table></figure>
+
+<p>如果没有使用<code>new</code>关键字，运行结果也是一样的。<br>上面的参数是一个正整数，返回数组的成员都是空位。虽然读取的时候返回<code>undefined</code>，但实际上该位置没有任何值。虽然可以取到<code>length</code>属性，但是取不到键名。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">arr[<span class="number">0</span>]  <span class="comment">//undefined</span></span><br><span class="line">arr[<span class="number">1</span>]  <span class="comment">//undefined</span></span><br></pre></td></tr></table></figure>
+
+<p><code>Array</code>构造函数有一个很大的缺陷，就是不同的参数，会导致它的行为不一致。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">3</span>)  <span class="comment">//[ empty x 3 ]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> b = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">2</span>,<span class="number">3</span>) <span class="comment">//[2, 3]</span></span><br></pre></td></tr></table></figure>
+
+<p>一个参数生成的是长度，二个参数生成的则是数组成员，所以我们推荐使用下面这种方法声明数组。<br>直接使用数组字面量是更好的做法。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">2</span>, <span class="number">3</span>]</span><br></pre></td></tr></table></figure>
+
+<h3 id="实例方法"><a href="#实例方法" class="headerlink" title="实例方法"></a>实例方法</h3><p><strong>valueOf()，toString()</strong><br><code>valueOf</code>方法是一个所有对象都拥有的方法，表示对该对象求值。不同对象的<code>valueOf</code>方法不尽一致，数组的<code>valueOf</code>方法返回数组本身。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line">arr.valueOf() <span class="comment">// [1, 2, 3]</span></span><br></pre></td></tr></table></figure>
+
+<p><code>toString</code>方法也是对象的通用方法，数组的<code>toString</code>方法返回数组的字符串形式。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line">arr.toString() <span class="comment">// "1,2,3"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]];</span><br><span class="line">arr.toString() <span class="comment">// "1,2,3,4,5,6"</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>push()，pop()</strong><br><code>push</code>方法用于在数组的末端添加一个或多个元素，并返回添加新元素后的数组长度。注意，该方法会改变原数组。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [];</span><br><span class="line"></span><br><span class="line">arr.push(<span class="number">1</span>) <span class="comment">// 1</span></span><br><span class="line">arr.push(<span class="string">'a'</span>) <span class="comment">// 2</span></span><br><span class="line">arr.push(<span class="literal">true</span>, &#123;&#125;) <span class="comment">// 4</span></span><br><span class="line">arr <span class="comment">// [1, 'a', true, &#123;&#125;]</span></span><br></pre></td></tr></table></figure>
+
+<p>上面代码使用<code>push</code>方法，往数组中添加了四个成员。<br><code>pop</code>方法用于删除数组的最后一个元素，并返回该元素。注意，该方法会改变原数组。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>];</span><br><span class="line"></span><br><span class="line">arr.pop() <span class="comment">// 'c'</span></span><br><span class="line">arr <span class="comment">// ['a', 'b']</span></span><br></pre></td></tr></table></figure>
+
+<p>对空数组使用<code>pop</code>方法，不会报错，而是返回<code>undefined</code>。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[].pop() <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+
+<p><code>push</code>和<code>pop</code>结合使用，就构成了“先进后出”的栈结构（stack）。</p>
+<p><strong>shift()，unshift()</strong></p>
+<p><code>shift()</code>方法用于删除数组的第一个元素，并返回该元素。注意，该方法会改变原数组。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>];</span><br><span class="line"></span><br><span class="line">a.shift() <span class="comment">// 'a'</span></span><br><span class="line">a <span class="comment">// ['b', 'c']</span></span><br></pre></td></tr></table></figure>
+
+<p>上面代码中，使用<code>shift()</code>方法以后，原数组就变了。<br><code>unshift()</code>方法用于在数组的第一个位置添加元素，并返回添加新元素后的数组长度。注意，该方法会改变原数组。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>];</span><br><span class="line"></span><br><span class="line">a.unshift(<span class="string">'x'</span>); <span class="comment">// 4</span></span><br><span class="line">a <span class="comment">// ['x', 'a', 'b', 'c']</span></span><br></pre></td></tr></table></figure>
+
+<p><code>unshift()</code>方法可以接受多个参数，这些参数都会添加到目标数组头部。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [ <span class="string">'c'</span>, <span class="string">'d'</span> ];</span><br><span class="line">arr.unshift(<span class="string">'a'</span>, <span class="string">'b'</span>) <span class="comment">// 4</span></span><br><span class="line">arr <span class="comment">// [ 'a', 'b', 'c', 'd' ]</span></span><br></pre></td></tr></table></figure>
+
+<p><code>push()</code>和<code>shift()</code>结合使用，就构成了“先进先出”的队列结构（queue）。</p>
+<p><strong>sort()</strong><br>sort方法对数组成员进行排序,排序后，原数组将被改变。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">'d'</span>, <span class="string">'c'</span>, <span class="string">'b'</span>, <span class="string">'a'</span>].sort()</span><br><span class="line"><span class="comment">// ['a', 'b', 'c', 'd']</span></span><br><span class="line"></span><br><span class="line">[<span class="number">4</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">1</span>].sort()</span><br><span class="line"><span class="comment">// [1, 2, 3, 4]</span></span><br><span class="line"></span><br><span class="line">[<span class="number">11</span>, <span class="number">101</span>].sort()</span><br><span class="line"><span class="comment">// [101, 11]</span></span><br><span class="line"></span><br><span class="line">[<span class="number">10111</span>, <span class="number">1101</span>, <span class="number">111</span>].sort()</span><br><span class="line"><span class="comment">// [10111, 1101, 111]</span></span><br></pre></td></tr></table></figure>
+
+<p>上面代码的最后两个例子，需要特殊注意。<code>sort()</code>方法不是按照大小排序，而是按照字典顺序。<br>如果想让<code>sort</code>方法按照自定义方式排序，可以传入一个函数作为参数。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">10111</span>, <span class="number">1101</span>, <span class="number">111</span>].sort(<span class="function"><span class="keyword">function</span> (<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> a - b;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// [111, 1101, 10111]</span></span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/15/11.数组和伪数组/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -337,9 +500,9 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="literal">undefined</span>, <span class="literal">undefined</span>, <span class="literal">undefined</span>];</span><br><span class="line"></span><br><span class="line">a.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">x, i</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(i + <span class="string">'. '</span> + x);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 0. undefined</span></span><br><span class="line"><span class="comment">// 1. undefined</span></span><br><span class="line"><span class="comment">// 2. undefined</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i <span class="keyword">in</span> a) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(i);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 0</span></span><br><span class="line"><span class="comment">// 1</span></span><br><span class="line"><span class="comment">// 2</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.keys(a)</span><br><span class="line"><span class="comment">// ['0', '1', '2']</span></span><br></pre></td></tr></table></figure>
 
 <p>空位就是数组没有这个元素，所以不会被遍历到，而<code>undefined</code>则表示数组有这个元素，值是<code>undefined</code>，所以遍历不会跳过。</p>
-<h2 id="伪数组"><a href="#伪数组" class="headerlink" title="伪数组"></a>伪数组</h2><h3 id="类似数组的对象特征"><a href="#类似数组的对象特征" class="headerlink" title="类似数组的对象特征"></a>类似数组的对象特征</h3><ol>
+<h2 id="伪数组"><a href="#伪数组" class="headerlink" title="伪数组"></a>伪数组</h2><h3 id="‘类似数组’对象的特征"><a href="#‘类似数组’对象的特征" class="headerlink" title="‘类似数组’对象的特征"></a>‘类似数组’对象的特征</h3><ol>
 <li>对象的所有键名都是正整数或零，并且有<code>length</code>属性这些<code>key</code>。</li>
-<li>原型链中没有<code>Array.prototype</code>就是。如：<code>Arguments</code></li>
+<li>原型链中没有<code>Array.prototype</code>就是伪数组。如：<code>Arguments</code></li>
 </ol>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  <span class="number">0</span>: <span class="string">'a'</span>,</span><br><span class="line">  <span class="number">1</span>: <span class="string">'b'</span>,</span><br><span class="line">  <span class="number">2</span>: <span class="string">'c'</span>,</span><br><span class="line">  length: <span class="number">3</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">obj[<span class="number">0</span>] <span class="comment">// 'a'</span></span><br><span class="line">obj[<span class="number">1</span>] <span class="comment">// 'b'</span></span><br><span class="line">obj.length <span class="comment">// 3</span></span><br><span class="line">obj.push(<span class="string">'d'</span>) <span class="comment">// TypeError: obj.push is not a function</span></span><br></pre></td></tr></table></figure>
 
@@ -358,7 +521,7 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">print</span>(<span class="params">value, index</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(index + <span class="string">' : '</span> + value);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Array</span>.prototype.forEach.call(arrayLike, print);</span><br></pre></td></tr></table></figure>
 
 <p>上面代码中，<code>arrayLike</code>代表一个类似数组的对象，本来是不可以使用数组的<code>forEach()</code>方法的，但是通过<code>call()</code>，可以把<code>forEach()</code>嫁接到<code>arrayLike</code>上面调用。</p>
-<p>这种方法比直接使用数组原生的<code>forEach</code>要慢，所以最好还是先将“类似数组的对象”转为真正的数组，然后再直接调用数组的<code>forEach</code>方法。</p>
+<p>这种方法比直接使用数组原生的<code>forEach</code>要慢，所以最好还是先将类似数组的对象转为真正的数组，然后再直接调用数组的<code>forEach</code>方法。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = <span class="built_in">Array</span>.prototype.slice.call(<span class="string">'abc'</span>);</span><br><span class="line">arr.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">chr</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(chr);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// a</span></span><br><span class="line"><span class="comment">// b</span></span><br><span class="line"><span class="comment">// c</span></span><br></pre></td></tr></table></figure>
 
 
@@ -515,7 +678,7 @@
 <p><code>toString()</code>方法返回对应的字符串形式。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Number</span>(<span class="number">123</span>).toString() <span class="comment">// "123"</span></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">'abc'</span>).toString() <span class="comment">// "abc"</span></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Boolean</span>(<span class="literal">true</span>).toString() <span class="comment">// "true"</span></span><br></pre></td></tr></table></figure>
 
-<p>所有对象都有<code>valueOf()</code>和<code>toString()</code>方法，那么我们是否有必要给每个对象一个<code>toString</code>和 <code>valueOf</code> 方法呢？明显不需要。<br><code>JavaScript</code>的做法是把<code>toString</code>和<code>valueOf</code>放在一个对象里（暂且叫做公用属性组成的对象）然后让每一个对象的 <strong>proto</strong> 指向这个「公用属性组成的对象」的地址。<br>这样，既可以节省内存，又不用频繁的去创造很多不必要的对象。</p>
+<p>所有对象都有<code>valueOf()</code>和<code>toString()</code>方法，那么我们是否有必要给每个对象一个<code>toString</code>和 <code>valueOf</code> 方法呢？明显不需要。<br>JavaScript的做法是把<code>toString</code>和<code>valueOf</code>放在一个对象里（暂且叫做公用属性组成的对象）然后让每一个对象的 <strong>proto</strong> 指向这个「公用属性组成的对象」的地址。<br>这样，既可以节省内存，又不用频繁的去创造很多不必要的对象。</p>
 <p>一般js有两种情况可以调用原型对象。</p>
 <ul>
 <li>原始类型与实例对象的自动转换</li>
@@ -530,7 +693,7 @@
 <p>自动转换生成的包装对象是只读的，无法修改。所以，字符串无法添加新属性。如果硬添加上去会返回<code>undefined</code>。</p>
 <p>另一方面，调用结束后，包装对象实例会自动销毁。这意味着，下一次调用字符串的属性时，实际是调用一个新生成的对象，而不是上一次调用时生成的那个对象，所以取不到赋值在上一个对象的属性。如果要为字符串添加属性，只有在它的原型对象<code>String.prototype</code>上定义。</p>
 <h3 id="调用对象"><a href="#调用对象" class="headerlink" title="调用对象"></a>调用对象</h3><p>还有一种情况是你声明的变量已经是一个对象了，但你调用<code>toString</code>函数并不是自身就拥有的，而是继承自<code>__proto__</code> ， 因为这样你才能调用<code>toString</code>函数。<br><img src="https://i.loli.net/2019/09/12/9D2xw1o3mCqzPJT.png" alt="18:31:51"><br>基本类型的构造函数已经自定义了对应自身的toString方法，这个方法跟对象的toString方法是不一样的<br>具体引用关系如下图：<br><img src="https://i.loli.net/2019/09/12/7PzmCDRLM6QrI1S.png" alt="18:32:40"><br><img src="https://i.loli.net/2019/09/12/E4SClXZFfxcRLhA.png" alt="18:33:00"><br>当我们不写代码的时候，内存中有全局对象Window，对象中有Number、Object、String、Boolean 这几个函数<br><img src="https://i.loli.net/2019/09/12/dpJbuWnhQo4aekI.png" alt="18:34:37"><br>当你写代码的时候<br><img src="https://i.loli.net/2019/09/12/8dEnWMaXhNY4zT9.png" alt="18:34:33"></p>
-<h3 id="各个-proto-与-prototype的关系："><a href="#各个-proto-与-prototype的关系：" class="headerlink" title="各个.__proto__与.prototype的关系："></a>各个<code>.__proto__</code>与<code>.prototype</code>的关系：</h3><p>基本类型的构造函数遵循这样的规则：对象.<strong>proto</strong> 指向构造函数.prototype</p>
+<h3 id="各个-proto-与-prototype的关系："><a href="#各个-proto-与-prototype的关系：" class="headerlink" title="各个.__proto__与.prototype的关系："></a>各个<code>.__proto__</code>与<code>.prototype</code>的关系：</h3><p>基本类型的构造函数遵循这样的规则：对象<code>.__proto__</code> 指向构造函数<code>.prototype</code></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> n = <span class="keyword">new</span> <span class="built_in">Number</span>(<span class="number">2</span>)</span><br><span class="line">n.__proto__ === <span class="built_in">Number</span>.prototype</span><br><span class="line"><span class="comment">//true</span></span><br></pre></td></tr></table></figure>
 
 <p>又因为<code>Number.prototype</code>作为一个对象，它指向了<code>Object.prototype</code></p>
@@ -1862,143 +2025,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/18/2.HTML常用标签介绍/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Gene">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Gene’s Notes">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/08/18/2.HTML常用标签介绍/" itemprop="url">HTML标签介绍</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-18T23:36:17+08:00">
-                2019-08-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>这一节的笔记只是先介绍下HTML常见标签，重点需要学习的标签将会在下一节介绍讲解。</p>
-<h3 id="HTML常用标签介绍"><a href="#HTML常用标签介绍" class="headerlink" title="HTML常用标签介绍"></a>HTML常用标签介绍</h3><p><strong>&lt;!DOCTYPE html&gt; HTML文档类型声明</strong><br>或许有人会有疑惑写在网页开头的这个声明，它的作用到底是什么呢？<br>其实它是用来<strong>选择文档类型的</strong>，在html历史上有很多文档的类型声明，这是现如今最简单的一个文档声明。其他的文档类型声明，<a href="https://www.w3.org/QA/2002/04/valid-dtd-list.html" target="_blank" rel="noopener">请点击这里</a></p>
-<h3 id="常见标签-元素-括号内是其全称及翻译"><a href="#常见标签-元素-括号内是其全称及翻译" class="headerlink" title="常见标签/元素 (括号内是其全称及翻译)"></a>常见标签/元素 (括号内是其全称及翻译)</h3><p><code>a (anchor 锚点)</code><br><code>form</code><br><code>input</code><br><code>button (按钮)</code><br><code>h1~h6 (标题)</code><br><code>p (pargraph 段落)</code><br><code>ul (un-ordered list 无序列表)</code><br><code>ol (ordered list 有序列表)</code><br><code>small</code><br><code>strong</code><br><code>div</code><br><code>span</code><br><code>kbd (键盘按键)</code><br><code>video (视频)</code><br><code>audio (音频)</code><br><code>svg (可缩放的矢量图形)</code><br><code>dl (description list    描述列表)</code><br><code>dt (description term        项目)</code><br><code>dd (description definition  项目描述)</code><br>除了<code>div</code>和<code>span</code>标签,其他标签都有默认样式。</p>
-<h3 id="元素类型"><a href="#元素类型" class="headerlink" title="元素类型"></a>元素类型</h3><ul>
-<li><strong>块状元素（block）：</strong>效果上会独占一行的标签。</li>
-<li><strong>内联元素（inline）：</strong>和其它的元素放在一起,不会独占一行。</li>
-</ul>
-<h3 id="列表元素"><a href="#列表元素" class="headerlink" title="列表元素"></a>列表元素</h3><ol>
-<li>无序列表 ul（unorder list） 典型的块状元素，并且ul还有margin，在不同的浏览器中margin是不同的。<br>a.列表项： li (list item) 典型的块状元素.</li>
-<li>有序列表 ol(order list ) 典型的块状元素，也有margin，在不同的浏览器中margin也是不同的。<br>a.列表项： li (list item) 典型的块状元素.</li>
-<li>定义列表 dl (definition list) 典型的块状元素<br>a. dd (definition detail) 类型详情 典型的块状元素.<br>b. dt (definition type) 类型定义 典型的块状元素.</li>
-</ol>
-<h3 id="HTML常用转义字符（括号内是其表示方法）"><a href="#HTML常用转义字符（括号内是其表示方法）" class="headerlink" title="HTML常用转义字符（括号内是其表示方法）"></a>HTML常用转义字符（括号内是其表示方法）</h3><p><code>&lt; (&amp;lt;)</code><br><code>&gt; (&amp;gt;)</code><br><code>空格 (&amp;nbsp;)</code><br><code>© (&amp;copy;)</code><br><code>® (&amp;reg;)</code><br><code>™ (&amp;trade;)</code></p>
-<p><a href="http://tool.oschina.net/commons?type=2" target="_blank" rel="noopener">更多转义字符</a></p>
-<h3 id="文本样式标签"><a href="#文本样式标签" class="headerlink" title="文本样式标签"></a>文本样式标签</h3><p><code>&lt;b&gt;&lt;/b&gt;</code> 加粗标签，样式标签，bold的缩写，内联元素。<br><code>&lt;strong&gt;&lt;/strong&gt;</code> 语气强调标签，虽然效果与<code>b</code>标签相同，但更加表示强调，而不是<code>b</code>标签的加粗。<br><code>&lt;strong&gt;&lt;/strong&gt;</code> 语义上的强调，内联元素。<br><code>&lt;i&gt;&lt;/i&gt;</code> italic的缩写，内联元素，文本斜体显示，内联元素 。<br><code>&lt;em&gt;&lt;/em&gt;</code> 也是斜体的表示，在html中推荐使用其来代替i标签,emphasize缩写为em,内联元素。<br><code>&lt;h1~6&gt;&lt;/h1~6&gt;</code> 描述语义的标签，块状元素，从上到下字体大小依次减少。<br><code>&lt;p&gt;&lt;/p&gt;</code> paragraph的缩写，描述的是语义，段中没有间距，但是在段与段之间是有间距的，但是margin在不同的浏览器中是一样的，典型的块状元素。<br><code>&lt;br&gt;</code> 空元素（概念在下面）,输出换行。<br><code>&lt;hr&gt;</code> 空元素 hr: horizontal rule的缩写，分割线 ，常用的属性有<code>color</code>、<code>width</code>、<code>align</code>（对齐方式） 其中<code>align</code>有三个选项：<code>left</code>、<code>right</code>、<code>center</code>。</p>
-<h3 id="空元素"><a href="#空元素" class="headerlink" title="空元素"></a>空元素</h3><p>即元素中不能有子元素或其他内容<br>如 <code>img</code> <code>input</code> <code>link</code> <code>meta</code> <code>hr</code> <code>br</code></p>
-<h3 id="可替换元素"><a href="#可替换元素" class="headerlink" title="可替换元素"></a>可替换元素</h3><p>如 <code>img</code>标签中的<code>src</code>属性可用图片的内容替换掉<code>img</code>标签，像这种标签被称为可替换元素，大部分是自带宽高的元素</p>
-<h3 id="noscript-标签"><a href="#noscript-标签" class="headerlink" title="noscript 标签"></a>noscript 标签</h3><p>如果用户浏览器不支持 script，则会显示<code>noscript</code>中的内容</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2049,7 +2075,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
